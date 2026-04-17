@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-kensington), fantasy;
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-xl: 12px;
+  --radius-lg: 8px;
+  --radius-md: 4px;
+  
+  --font-kensington: var(--font-kensington);
+  --font-figtree: var(--font-figtree);
+  
+  --shadow-active: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+:root {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  
+  --card: #0A0A0A;
+  --card-foreground: #FFFFFF;
+  
+  --popover: #0A0A0A;
+  --popover-foreground: #FFFFFF;
+  
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  
+  --secondary: #111111;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #111111;
+  --muted-foreground: #A1A1AA;
+  
+  --accent: #FFFFFF;
+  --accent-foreground: #000000;
+  
+  --border: #1F1F1F;
+  --input: #1F1F1F;
+  --ring: #FFFFFF;
+  
+  --radius: 12px;
+}
+
+/* Force monochrome in dark mode too */
+.dark {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --border: #1F1F1F;
+  --accent: #FFFFFF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-display-lg {
+    font-family: var(--font-kensington);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .text-headline-lg {
+    font-family: var(--font-kensington);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .text-title-md {
+    font-family: var(--font-figtree);
+    font-size: clamp(1.125rem, 3vw, 1.375rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
+
+  .text-body-reg {
+    font-family: var(--font-figtree);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+  }
+
+  .text-label-sm {
+    font-family: var(--font-figtree);
+    font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.0;
+  }
+  
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Pure white spotlight instead of amber */
+    background: radial-gradient(800px circle at var(--x) var(--y), rgba(255, 255, 255, 0.1), transparent 40%);
+    opacity: var(--spotlight-opacity, 0);
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  @keyframes glimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .glimmer-badge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    animation: glimmer 3s infinite;
+  }
+
+  .blueprint {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+nextjs-portal {
+  display: none !important;
+}
