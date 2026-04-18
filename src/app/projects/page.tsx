@@ -37,7 +37,7 @@ export default function ProjectShowcase() {
       <main className="container mx-auto px-6 py-12">
         <Link href="/" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-accent mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4" />
-          Back to Discovery
+          Back to Venture
         </Link>
 
         {/* Hero Section */}
@@ -101,55 +101,6 @@ export default function ProjectShowcase() {
                </div>
             </div>
 
-            <div className="p-6 rounded-3xl bg-accent/5 border border-accent/20">
-               <div className="flex justify-between items-center mb-4">
-                 <h4 className="text-xs font-bold uppercase tracking-widest text-accent">Investor Ask</h4>
-                 <Badge className="bg-status-mint text-white text-[9px]">Verified Deck</Badge>
-               </div>
-               <div className="space-y-4">
-                  <div className="flex justify-between items-end">
-                    <span className="text-display-lg !text-3xl font-bold">$1.2M</span>
-                    <span className="text-xs text-muted-foreground">/ $3.5M Budget</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-accent w-[35%]" />
-                  </div>
-                  
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" className="w-full border-accent/30 text-accent hover:bg-accent hover:text-white h-10 text-[10px] uppercase tracking-widest font-bold rounded-xl transition-all">
-                        Request Financials
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[700px] bg-secondary border-white/5 glass shadow-2xl">
-                      <DialogHeader>
-                        <DialogTitle className="text-headline-lg !text-2xl text-accent">SECURE PROJECT DATA ROOM</DialogTitle>
-                        <DialogDescription className="text-muted-foreground flex items-center gap-2">
-                          <Lock className="w-3 h-3 text-status-mint" />
-                          256-bit Encrypted Session • Verified Investor Status Required
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="py-12 flex flex-col items-center justify-center space-y-6 text-center">
-                        <div className="w-24 h-24 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20 animate-pulse">
-                          <ShieldCheck className="w-12 h-12 text-accent" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-bold text-white mb-2">Request Access to Financials</h4>
-                          <p className="text-sm text-muted-foreground max-w-sm">
-                            Full budget sheets, P&A breakdown, and revenue projections are restricted to authenticated investors.
-                          </p>
-                        </div>
-                        <div className="flex gap-4 w-full max-w-xs">
-                          <Button className="flex-1 bg-accent text-white font-bold uppercase tracking-widest h-12 rounded-xl">
-                            Request Data Loop
-                          </Button>
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-
-               </div>
-            </div>
           </div>
         </div>
 
@@ -165,10 +116,6 @@ export default function ProjectShowcase() {
               </TabsTrigger>
               <TabsTrigger value="team" className="bg-transparent data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-accent rounded-none px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground data-[state=active]:text-white transition-all">
                 The Team
-              </TabsTrigger>
-              <TabsTrigger value="investor" className="bg-transparent data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-accent rounded-none px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground data-[state=active]:text-white transition-all flex items-center gap-2">
-                <Lock className="w-3 h-3" />
-                Investor Only
               </TabsTrigger>
             </TabsList>
             
@@ -240,19 +187,6 @@ export default function ProjectShowcase() {
               </div>
             </TabsContent>
 
-            <TabsContent value="investor" className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-               <div className="p-12 rounded-3xl bg-secondary/30 border border-white/5 flex flex-col items-center justify-center text-center space-y-6">
-                  <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center">
-                    <Lock className="w-10 h-10 text-accent" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Secure Investor Room</h3>
-                  <p className="text-gray-400 max-w-sm">To access financial breakdowns, market analysis, and the full pitch deck, you must be a verified investor.</p>
-                  <Button className="bg-accent text-white px-8 rounded-xl font-bold uppercase tracking-widest">
-                    Request Secure Access
-                  </Button>
-                  <p className="text-[10px] text-muted-foreground italic">Verification usually takes 24-48 hours.</p>
-               </div>
-            </TabsContent>
           </Tabs>
         </div>
       </main>

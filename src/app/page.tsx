@@ -7,7 +7,6 @@ import {
   TrendingUp, 
   Target, 
   Puzzle, 
-  Rocket, 
   BarChart4, 
   DollarSign, 
   Presentation,
@@ -113,17 +112,17 @@ export default function Home() {
         {/* Slide 2: Project Case Study (ThiraiTerra Spotlight) */}
         <section className="py-40 bg-background blueprint border-b border-white/5">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col lg:flex-row gap-20 items-center">
-              <div className="w-full lg:w-1/2">
+            <div className="flex flex-col gap-20 items-center">
+              <div className="w-full max-w-4xl mx-auto text-center">
                 <Badge className="bg-white/5 text-white/60 mb-6 border-white/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Case Study: Infra-Protocol V1</Badge>
                 <h2 className="text-display-section !text-5xl text-white mb-8 leading-tight">THE INFRASTRUCTURE <span className="text-white/40 italic">DOMINANCE</span></h2>
                 <p className="text-body-narrative text-muted-foreground mb-12">
                   Our core protocol focuses on the $400B+ gap in production logistics. By unifying capital, crew, and logistics into a single verified ledger, we reduce operational friction by 40%.
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
                   {CASE_STUDY_METRICS.map((m, i) => (
-                    <div key={i} className="flex flex-col border-l border-white/10 pl-6 py-2">
+                    <div key={i} className="flex flex-col border-white/10 px-6 py-2 items-center">
                        <m.icon className="w-4 h-4 text-white/40 mb-4" />
                        <span className="text-display-section !text-2xl mb-1">{m.value}</span>
                        <span className="text-label-stats text-[10px] text-white/40">{m.label}</span>
@@ -132,28 +131,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-full lg:w-1/2">
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="viewfinder aspect-video relative group cursor-pointer"
-                >
-                  <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <video 
-                    src="https://assets.mixkit.co/videos/preview/mixkit-professional-film-camera-on-a-tripod-recording-43183-large.mp4" 
-                    autoPlay 
-                    muted 
-                    loop 
-                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="w-20 h-20 rounded-full border border-white/20 bg-black/40 flex items-center justify-center group-hover:scale-110 transition-transform">
-                       <Rocket className="w-8 h-8 text-white fill-white" />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-32">
@@ -197,22 +175,22 @@ export default function Home() {
               {[
                 {
                   id: "ceo",
-                  name: "Praveen Kumar",
+                  name: "Ramsan",
                   role: "Co-Founder & CEO",
                   bio: "Bridging cinematic vision and scalable infrastructure through a decade of industry expertise.",
                   img: "/team/ceo.png"
                 },
                 {
                   id: "dev-m",
-                  name: "Ram San",
-                  role: "Dev & Digital Marketer",
+                  name: "Ramsan",
+                  role: "Digital Marketer",
                   bio: "Architecting the digital protocols and growth engines that power the ecosystem.",
                   img: "/team/dev-marketer.png"
                 },
                 {
                   id: "s-dev",
                   name: "Arjun Mehta",
-                  role: "Senior Web Developer",
+                  role: " Web Developer",
                   bio: "Specializing in high-performance infrastructure and automated resource protocols for modern film production.",
                   img: "/team/senior-dev.png"
                 }
@@ -305,7 +283,6 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 gap-4">
                <p className="text-label-stats text-[9px] text-white/20 tracking-[0.3em]">© 2026 THIRAITERRA INFRASTRUCTURE INC. DESIGNED FOR INEVITABILITY.</p>
                <div className="flex gap-8 text-label-stats text-[9px] text-white/40">
-                  <span className="hover:text-white cursor-pointer transition-colors">INVESTOR LOGIN</span>
                   <span className="hover:text-white cursor-pointer transition-colors">SYSTEM STATUS</span>
                </div>
             </div>

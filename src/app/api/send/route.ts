@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       subject: `[ThiraiTerra] New Inquiry: ${validatedData.subject || 'Profile Request'}`,
       html: `
         <div style="font-family: sans-serif; background: #081624; color: #F5F5F5; padding: 40px; border-radius: 12px;">
-          <h1 style="color: #D88A4A; margin-bottom: 24px;">New Discovery Request</h1>
+          <h1 style="color: #D88A4A; margin-bottom: 24px;">New Strategic Inquiry</h1>
           <p><strong>From:</strong> ${validatedData.name}</p>
           <p><strong>Email:</strong> ${validatedData.email}</p>
           <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; margin-top: 20px;">
