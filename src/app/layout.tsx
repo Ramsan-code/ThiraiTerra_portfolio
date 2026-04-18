@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Figtree, Oswald } from "next/font/google";
+import { Geologica } from "next/font/google";
 import "./globals.css";
 import { VisualEditsMessenger } from "orchids-visual-edits";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const geologica = Geologica({
+  variable: "--font-geologica",
   subsets: ["latin"],
+  axes: ["CRSV", "SHRP", "slnt"],
 });
 
-const kensington = Oswald({
-  variable: "--font-kensington",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 
 
@@ -32,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark h-full">
       <body
-        className={`${figtree.variable} ${kensington.variable} antialiased selection:bg-amber-500/30 overflow-x-hidden min-h-screen flex flex-col`}
+        className={`${geologica.variable} antialiased selection:bg-amber-500/30 overflow-x-hidden min-h-screen flex flex-col`}
       >
         {children}
         <VisualEditsMessenger />

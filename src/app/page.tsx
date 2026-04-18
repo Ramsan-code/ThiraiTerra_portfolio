@@ -1,18 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { 
   ArrowRight, 
   TrendingUp, 
-  Target, 
-  Puzzle, 
-  BarChart4, 
-  DollarSign, 
-  Presentation,
-  ShieldCheck,
   Zap,
-  ChevronRight,
   Globe,
   Database,
   Clapperboard,
@@ -21,7 +14,6 @@ import {
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
@@ -38,6 +30,69 @@ const CASE_STUDY_METRICS = [
   { label: "Partner Network", value: "125+", icon: Handshake },
   { label: "Scale Velocity", value: "3.2x", icon: TrendingUp },
 ];
+
+const TEAM_MEMBERS = [
+  {
+    id: "ceo",
+    name: "Ramsan",
+    role: "Co-Founder & CEO",
+    bio: "Bridging cinematic vision and scalable infrastructure through a decade of industry expertise.",
+    img: "/team/ceo.png"
+  },
+  {
+    id: "dev-m",
+    name: "Ramsan",
+    role: "Digital Marketer",
+    bio: "Architecting the digital protocols and growth engines that power the ecosystem.",
+    img: "/team/dev-marketer.png"
+  },
+  {
+    id: "s-dev",
+    name: "Arjun Mehta",
+    role: " Web Developer",
+    bio: "Specializing in high-performance infrastructure and automated resource protocols for modern film production.",
+    img: "/team/senior-dev.png"
+  }
+];
+
+function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
+  const [isActive, setIsActive] = useState(false);
+  
+  return (
+    <SpotlightCard 
+      className="overflow-hidden group cursor-pointer" 
+      onClick={() => setIsActive(!isActive)}
+    >
+      <div className="flex flex-col h-full">
+        <div className="aspect-square relative overflow-hidden bg-black">
+          <Image 
+            src={member.img} 
+            alt={member.name} 
+            fill 
+            className={cn(
+              "object-cover transition-all duration-700 ease-in-out",
+              isActive ? "grayscale-0" : "grayscale"
+            )}
+          />
+        </div>
+
+        <div className="p-8 flex flex-col justify-center flex-1">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-display-section !text-xl">{member.name}</h3>
+            <div className={cn(
+              "w-2 h-2 rounded-full transition-colors duration-500",
+              isActive ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "bg-white/10"
+            )} />
+          </div>
+          <p className="text-label-stats text-[10px] text-white/40 mb-6 uppercase tracking-widest">{member.role}</p>
+          <p className="text-body-narrative !text-[13px] text-white/60 leading-relaxed italic">
+            "{member.bio}"
+          </p>
+        </div>
+      </div>
+    </SpotlightCard>
+  );
+}
 
 export default function Home() {
   return (
@@ -109,6 +164,8 @@ export default function Home() {
           </div>
         </section>
 
+
+
         {/* Slide 2: Project Case Study (ThiraiTerra Spotlight) */}
         <section className="py-40 bg-background blueprint border-b border-white/5">
           <div className="container mx-auto px-6">
@@ -130,8 +187,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-
-
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-32">
@@ -172,62 +227,9 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  id: "ceo",
-                  name: "Ramsan",
-                  role: "Co-Founder & CEO",
-                  bio: "Bridging cinematic vision and scalable infrastructure through a decade of industry expertise.",
-                  img: "/team/ceo.png"
-                },
-                {
-                  id: "dev-m",
-                  name: "Ramsan",
-                  role: "Digital Marketer",
-                  bio: "Architecting the digital protocols and growth engines that power the ecosystem.",
-                  img: "/team/dev-marketer.png"
-                },
-                {
-                  id: "s-dev",
-                  name: "Arjun Mehta",
-                  role: " Web Developer",
-                  bio: "Specializing in high-performance infrastructure and automated resource protocols for modern film production.",
-                  img: "/team/senior-dev.png"
-                }
-              ].map((member) => {
-                const [isActive, setIsActive] = useState(false);
-                return (
-                  <SpotlightCard key={member.id} className="overflow-hidden group cursor-pointer" onClick={() => setIsActive(!isActive)}>
-                    <div className="flex flex-col h-full">
-                      <div className="aspect-square relative overflow-hidden bg-black">
-                        <Image 
-                          src={member.img} 
-                          alt={member.name} 
-                          fill 
-                          className={cn(
-                            "object-cover transition-all duration-700 ease-in-out",
-                            isActive ? "grayscale-0" : "grayscale"
-                          )}
-                        />
-                      </div>
-
-                      <div className="p-8 flex flex-col justify-center flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-display-section !text-xl">{member.name}</h3>
-                          <div className={cn(
-                            "w-2 h-2 rounded-full transition-colors duration-500",
-                            isActive ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "bg-white/10"
-                          )} />
-                        </div>
-                        <p className="text-label-stats text-[10px] text-white/40 mb-6 uppercase tracking-widest">{member.role}</p>
-                        <p className="text-body-narrative !text-[13px] text-white/60 leading-relaxed italic">
-                          "{member.bio}"
-                        </p>
-                      </div>
-                    </div>
-                  </SpotlightCard>
-                );
-              })}
+              {TEAM_MEMBERS.map((member) => (
+                <TeamMemberCard key={member.id} member={member} />
+              ))}
             </div>
           </div>
         </section>
@@ -245,9 +247,6 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                  <Button className="h-16 px-12 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/90 transition-all hover:scale-105">
                     Request Partner Access
-                 </Button>
-                 <Button variant="outline" className="h-16 px-12 border-white/10 bg-white/5 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 transition-all">
-                    View Market Thesis
                  </Button>
               </div>
            </div>
@@ -291,4 +290,3 @@ export default function Home() {
     </div>
   );
 }
-
