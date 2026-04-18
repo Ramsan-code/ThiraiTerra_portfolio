@@ -7,8 +7,8 @@ import { ShieldCheck, Video, MapPin, Star } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useSpotlight } from "@/hooks/use-spotlight";
-
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { motion } from "framer-motion";
 
 const TALENT_DATA = [
   {
@@ -99,27 +99,16 @@ export function DiscoveryGrid() {
 
 function TalentCard({ talent }: { talent: any }) {
   const [isHovered, setIsHovered] = useState(false);
-  const spotlight = useSpotlight();
 
   return (
-    <Card 
+    <SpotlightCard 
       className={cn(
-        "group relative overflow-hidden border-white/5 bg-secondary/30 transition-all duration-500 hover:shadow-active hover:shadow-accent/10 spotlight",
+        "group relative overflow-hidden border-white/5 bg-secondary/30 transition-all duration-500",
         talent.size === "large" ? "md:row-span-2 md:col-span-2" : "",
         talent.size === "medium" ? "md:col-span-1" : ""
       )}
-      style={spotlight.style}
-      onMouseMove={(e) => {
-        spotlight.onMouseMove(e);
-      }}
-      onMouseEnter={() => {
-        setIsHovered(true);
-        spotlight.onMouseEnter();
-      }}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        spotlight.onMouseLeave();
-      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="aspect-[4/5] relative w-full overflow-hidden">
         {talent.video && isHovered ? (
@@ -144,7 +133,7 @@ function TalentCard({ talent }: { talent: any }) {
         
         <div className="absolute top-4 left-4 flex flex-col gap-2">
           {talent.verified && (
-            <Badge className="bg-status-mint/20 text-status-mint border-status-mint/30 backdrop-blur-md px-2 py-0.5 flex items-center gap-1 glimmer-badge !relative overflow-hidden">
+            <Badge className="bg-emerald-500/20 text-emerald-500 border-emerald-500/30 backdrop-blur-md px-2 py-0.5 flex items-center gap-1 glimmer-badge !relative overflow-hidden">
               <ShieldCheck className="w-3 h-3" />
               <span className="text-[10px] font-bold uppercase tracking-widest">Verified</span>
             </Badge>
@@ -160,14 +149,14 @@ function TalentCard({ talent }: { talent: any }) {
 
         <div className="absolute bottom-4 left-4 right-4 text-white">
           <div className="flex items-center justify-between mb-1">
-            <h3 className="text-headline-lg !text-xl leading-tight truncate">{talent.name}</h3>
-            <div className="flex items-center gap-1 text-golden font-bold">
+            <h3 className="text-display-section !text-xl leading-tight truncate">{talent.name}</h3>
+            <div className="flex items-center gap-1 text-white font-bold">
               <Star className="w-3 h-3 fill-current" />
               <span className="text-xs">{talent.rating}</span>
             </div>
           </div>
-          <p className="text-label-sm text-gray-400 mb-2">{talent.role}</p>
-          <div className="flex items-center gap-1 text-xs text-gray-400 mb-3">
+          <p className="text-label-stats text-[10px] text-white/40 mb-2">{talent.role}</p>
+          <div className="flex items-center gap-1 text-xs text-white/30 mb-3">
             <MapPin className="w-3 h-3" />
             <span>{talent.location}</span>
           </div>
@@ -184,16 +173,16 @@ function TalentCard({ talent }: { talent: any }) {
       
       <div className="p-4 flex items-center justify-between bg-card text-card-foreground">
         <div className="flex flex-col">
-          <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Status</span>
+          <span className="text-[9px] uppercase tracking-widest text-white/20">Status</span>
           <span className={cn(
             "text-xs font-bold",
-            talent.availability === "Immediate" ? "text-status-mint" : "text-golden"
+            talent.availability === "Immediate" ? "text-emerald-500" : "text-white/60"
           )}>{talent.availability}</span>
         </div>
-        <Button size="sm" variant="outline" className="h-8 text-[10px] uppercase tracking-widest border-white/10 hover:bg-accent hover:text-white transition-all">
-          View Portfolio
+        <Button size="sm" variant="outline" className="h-8 text-[10px] uppercase tracking-widest border-white/10 hover:bg-white hover:text-black transition-all">
+          View Protocol
         </Button>
       </div>
-    </Card>
+    </SpotlightCard>
   );
 }

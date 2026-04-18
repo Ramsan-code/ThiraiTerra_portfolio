@@ -92,70 +92,99 @@
 }
 
 @layer utilities {
-  .text-display-lg {
+  .text-display-hero {
     font-family: var(--font-kensington);
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(2.625rem, 10vw, 4rem); /* 42px - 64px */
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
     text-transform: uppercase;
   }
 
-  .text-headline-lg {
+  .text-display-section {
     font-family: var(--font-kensington);
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
-    font-weight: 600;
-    letter-spacing: 0.01em;
+    font-size: clamp(1.75rem, 5vw, 2rem); /* 28px - 32px */
+    font-weight: 700;
+    letter-spacing: -0.01em;
     line-height: 1.2;
     text-transform: uppercase;
   }
 
-  .text-title-md {
+  .text-body-narrative {
     font-family: var(--font-figtree);
-    font-size: clamp(1.125rem, 3vw, 1.375rem);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    line-height: 1.35;
-  }
-
-  .text-body-reg {
-    font-family: var(--font-figtree);
-    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.125rem); /* 16px - 18px */
     font-weight: 400;
-    letter-spacing: 0.03em;
-    line-height: 1.6;
+    letter-spacing: 0.02em;
+    line-height: 1.55;
   }
 
-  .text-label-sm {
+  .text-label-stats {
     font-family: var(--font-figtree);
-    font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
-    font-weight: 500;
+    font-size: clamp(0.6875rem, 1.5vw, 0.75rem); /* 11px - 12px */
+    font-weight: 600;
     letter-spacing: 0.05em;
     line-height: 1.0;
+    text-transform: uppercase;
   }
   
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
   
-  .spotlight {
+  .viewfinder {
+    @apply border border-white/10 rounded-[12px] overflow-hidden;
+  }
+
+  .spotlight-card {
     position: relative;
     overflow: hidden;
+    @apply border border-white/5 bg-secondary/20 rounded-[12px];
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .spotlight::after {
+
+  .spotlight-card::after {
     content: "";
     position: absolute;
     inset: 0;
-    /* Pure white spotlight instead of amber */
-    background: radial-gradient(800px circle at var(--x) var(--y), rgba(255, 255, 255, 0.1), transparent 40%);
-    opacity: var(--spotlight-opacity, 0);
-    transition: opacity 0.3s;
+    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.08), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
     pointer-events: none;
+  }
+
+  .spotlight-card:hover::after {
+    opacity: 1;
+  }
+
+  .spotlight-card:hover {
+    @apply border-white/20;
+    transform: translateY(-4px) rotateX(2deg) rotateY(2deg);
+  }
+
+  .blueprint {
+    position: relative;
+  }
+
+  .blueprint::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   @keyframes glimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+  }
+
+  .glimmer-badge {
+    position: relative;
+    overflow: hidden;
   }
 
   .glimmer-badge::before {
@@ -165,13 +194,6 @@
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transform: translateX(-100%);
     animation: glimmer 3s infinite;
-  }
-
-  .blueprint {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
   }
 }
 
