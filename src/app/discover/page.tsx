@@ -32,7 +32,7 @@ export default function DiscoverPage() {
                  <SlidersHorizontal className="w-4 h-4" />
                  Protocols
                </Button>
-               <Button className="h-16 px-10 bg-white text-black rounded-xl text-label-stats text-[10px] font-bold flex-1 lg:flex-initial shadow-lg shadow-white/5 hover:scale-105 transition-all">
+               <Button className="h-16 px-10 bg-white !text-black rounded-xl text-label-stats text-[10px] font-bold flex-1 lg:flex-initial shadow-lg shadow-white/5 hover:scale-105 transition-all">
                  Apply Logic
                </Button>
             </div>

@@ -74,12 +74,12 @@ export default function InvestorDashboard() {
              <h1 className="text-display-section !text-4xl mb-2">VENTURE <span className="text-white/40 italic">DASHBOARD</span></h1>
              <p className="text-label-stats text-[10px] text-white/40 font-bold uppercase tracking-[0.3em]">ThiraiTerra • Investor Relations Management v2.0</p>
            </div>
-           <div className="flex items-center gap-6">
-              <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+              <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 w-fit">
                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                 <span className="text-label-stats text-[10px] text-white/60">Live Market Feed Active</span>
+                 <span className="text-label-stats text-[10px] text-white/60">Live Feed</span>
               </div>
-              <Badge className="bg-white/10 text-white border-white/20 px-4 py-1.5 uppercase tracking-[0.1em] text-[10px]">Accredited Only</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 px-4 py-1.5 uppercase tracking-[0.1em] text-[10px] w-fit">Accredited</Badge>
            </div>
         </div>
 

@@ -94,7 +94,7 @@
 @layer utilities {
   .text-display-hero {
     font-family: var(--font-kensington);
-    font-size: clamp(2.625rem, 10vw, 4rem); /* 42px - 64px */
+    font-size: clamp(2rem, 10vw, 4rem); /* Improved mobile start: 32px */
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -103,7 +103,7 @@
 
   .text-display-section {
     font-family: var(--font-kensington);
-    font-size: clamp(1.75rem, 5vw, 2rem); /* 28px - 32px */
+    font-size: clamp(1.5rem, 6vw, 2rem); /* 24px - 32px */
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 1.2;

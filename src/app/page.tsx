@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { Navbar } from "@/components/navbar";
 import { 
   ArrowRight, 
@@ -18,12 +19,14 @@ import {
   Clapperboard,
   Handshake
 } from "lucide-react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { cn } from "@/lib/utils";
 
 const QUICK_STATS = [
   { label: "Target Market", value: "$400B+", detail: "Global Entertainment", icon: Globe },
@@ -56,7 +59,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
           </div>
 
-          <div className="container relative z-10 px-6 pt-20 pb-32">
+          <div className="container mx-auto relative z-10 px-6 pt-20 pb-32">
             <div className="text-center mb-24">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -66,7 +69,7 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 glimmer-badge mb-8">
                   <span className="text-label-stats text-white/60">Venture Milestone 2026</span>
                 </div>
-                <h1 className="text-display-hero max-w-5xl mx-auto mb-8 tracking-[-0.03em]">
+                <h1 className="text-display-hero max-w-5xl mx-auto mb-8 tracking-[-0.03em] break-words">
                   Architecting is the <span className="text-white underline decoration-white/20 underline-offset-[12px]">Future Foundation</span> of Modern Cinema
                 </h1>
                 <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-12">
@@ -109,7 +112,7 @@ export default function Home() {
 
         {/* Slide 2: Project Case Study (ThiraiTerra Spotlight) */}
         <section className="py-40 bg-background blueprint border-b border-white/5">
-          <div className="container px-6">
+          <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row gap-20 items-center">
               <div className="w-full lg:w-1/2">
                 <Badge className="bg-white/5 text-white/60 mb-6 border-white/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Case Study: Infra-Protocol V1</Badge>
@@ -142,10 +145,10 @@ export default function Home() {
                     autoPlay 
                     muted 
                     loop 
-                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 blur-[2px] group-hover:blur-0"
+                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="w-20 h-20 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-20 h-20 rounded-full border border-white/20 bg-black/40 flex items-center justify-center group-hover:scale-110 transition-transform">
                        <Rocket className="w-8 h-8 text-white fill-white" />
                     </div>
                   </div>
@@ -179,11 +182,83 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Slide 3: Leadership (Venture Architects) */}
+        <section className="py-40 bg-secondary/10 border-b border-white/5 relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="mb-20">
+              <Badge className="bg-white/5 text-white/60 mb-6 border-white/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">The Architects</Badge>
+              <h2 className="text-display-section !text-5xl text-white mb-6">VENTURE <span className="text-white/40 italic">LEADERSHIP</span></h2>
+              <p className="text-body-narrative text-muted-foreground max-w-2xl">
+                Engineering the inevitable layer of cinematic commerce requires a fusion of industry foresight and technical precision.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  id: "ceo",
+                  name: "Praveen Kumar",
+                  role: "Co-Founder & CEO",
+                  bio: "Bridging cinematic vision and scalable infrastructure through a decade of industry expertise.",
+                  img: "/team/ceo.png"
+                },
+                {
+                  id: "dev-m",
+                  name: "Ram San",
+                  role: "Dev & Digital Marketer",
+                  bio: "Architecting the digital protocols and growth engines that power the ecosystem.",
+                  img: "/team/dev-marketer.png"
+                },
+                {
+                  id: "s-dev",
+                  name: "Arjun Mehta",
+                  role: "Senior Web Developer",
+                  bio: "Specializing in high-performance infrastructure and automated resource protocols for modern film production.",
+                  img: "/team/senior-dev.png"
+                }
+              ].map((member) => {
+                const [isActive, setIsActive] = useState(false);
+                return (
+                  <SpotlightCard key={member.id} className="overflow-hidden group cursor-pointer" onClick={() => setIsActive(!isActive)}>
+                    <div className="flex flex-col h-full">
+                      <div className="aspect-square relative overflow-hidden bg-black">
+                        <Image 
+                          src={member.img} 
+                          alt={member.name} 
+                          fill 
+                          className={cn(
+                            "object-cover transition-all duration-700 ease-in-out",
+                            isActive ? "grayscale-0" : "grayscale"
+                          )}
+                        />
+                      </div>
+
+                      <div className="p-8 flex flex-col justify-center flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-display-section !text-xl">{member.name}</h3>
+                          <div className={cn(
+                            "w-2 h-2 rounded-full transition-colors duration-500",
+                            isActive ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "bg-white/10"
+                          )} />
+                        </div>
+                        <p className="text-label-stats text-[10px] text-white/40 mb-6 uppercase tracking-widest">{member.role}</p>
+                        <p className="text-body-narrative !text-[13px] text-white/60 leading-relaxed italic">
+                          "{member.bio}"
+                        </p>
+                      </div>
+                    </div>
+                  </SpotlightCard>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Strategic Call to Action */}
         <section className="py-40 bg-background relative overflow-hidden">
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
            
-           <div className="container px-6 relative z-10 text-center">
+           <div className="container mx-auto px-6 relative z-10 text-center">
               <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">SECURE YOUR POSITION IN THE <span className="text-white/40 italic">INFRASTRUCTURE ERA</span></h2>
               <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-16">
                  We are currently opening exclusive partnership access for strategic film industry leaders and venture partners. Validate your vision with our protocol.
@@ -202,7 +277,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-background py-24 border-t border-white/5">
-         <div className="container px-6">
+         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
                <div>
                   <span className="text-display-section !text-2xl text-white block mb-4 tracking-[-0.03em]">THIRAI<span className="text-white/40 italic">TERRA</span></span>

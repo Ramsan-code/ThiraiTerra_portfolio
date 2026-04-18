@@ -30,9 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark h-full">
       <body
-        className={`${figtree.variable} ${kensington.variable} antialiased selection:bg-amber-500/30`}
+        className={`${figtree.variable} ${kensington.variable} antialiased selection:bg-amber-500/30 overflow-x-hidden min-h-screen flex flex-col`}
       >
         {children}
         <VisualEditsMessenger />
