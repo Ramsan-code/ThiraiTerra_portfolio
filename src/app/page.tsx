@@ -44,13 +44,7 @@ const TEAM_MEMBERS = [
     bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     img: "/team/dev-marketer.png"
   },
-  {
-    id: "s-dev",
-    name: "Lajeeban",
-    role: " Web Developer",
-    bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    img: "/team/senior-dev.png"
-  }
+
 ];
 
 function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
@@ -232,7 +226,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
-                Request Partner Access
+               Lorem Ipsum is simply dummy text
               </Button>
             </div>
           </div>
@@ -244,31 +238,31 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
             <div>
               <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
-              <p className="text-label-stats text-[10px] text-foreground/40">Architecting Industrial Standards for Film.</p>
+              <p className="text-label-stats text-[10px] text-foreground/40">loream</p>
             </div>
             <div className="flex gap-16">
               <div className="space-y-6">
-                <h5 className="text-label-stats text-[10px] text-foreground">Venture</h5>
+                <h5 className="text-label-stats text-[10px] text-foreground">loream</h5>
                 <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Infrastructure</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Partnerships</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Market Cap</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
                 </ul>
               </div>
               <div className="space-y-6">
-                <h5 className="text-label-stats text-[10px] text-foreground">Governance</h5>
+                <h5 className="text-label-stats text-[10px] text-foreground">loream</h5>
                 <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Security</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Privacy</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Legal</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
-            <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA INFRASTRUCTURE INC. DESIGNED FOR INEVITABILITY.</p>
+            <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA .</p>
             <div className="flex gap-8 text-label-stats text-[9px] text-foreground/40">
-              <span className="hover:text-foreground cursor-pointer transition-colors">SYSTEM STATUS</span>
+              <span className="hover:text-foreground cursor-pointer transition-colors">loream</span>
             </div>
           </div>
         </div>
