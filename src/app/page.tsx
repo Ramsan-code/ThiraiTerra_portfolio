@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Navbar } from "@/components/navbar";
-import { 
-  ArrowRight, 
-  TrendingUp, 
+import {
+  ArrowRight,
+  TrendingUp,
   Zap,
   Globe,
   Database,
@@ -20,12 +20,9 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { cn } from "@/lib/utils";
 
 const QUICK_STATS = [
-  { label: "Target Market", value: "$400B+", detail: "Global Entertainment", icon: Globe },
+  { label: "Target Market", value: "", detail: "Global Entertainment", icon: Globe },
   { label: "Business Model", value: "SaaS", detail: "Professional Infrastructure", icon: Database },
-  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
-  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
-  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
-  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
+  { label: "Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
 ];
 
 const CASE_STUDY_METRICS = [
@@ -37,39 +34,39 @@ const TEAM_MEMBERS = [
     id: "ceo",
     name: "Ramsan",
     role: "Co-Founder & CEO",
-    bio: "Bridging cinematic vision and scalable infrastructure through a decade of industry expertise.",
+    bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     img: "/team/ceo.png"
   },
   {
     id: "dev-m",
-    name: "Ramsan",
+    name: "Sabesan",
     role: "Digital Marketer",
-    bio: "Architecting the digital protocols and growth engines that power the ecosystem.",
+    bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     img: "/team/dev-marketer.png"
   },
   {
     id: "s-dev",
-    name: "Arjun Mehta",
+    name: "Lajeeban",
     role: " Web Developer",
-    bio: "Specializing in high-performance infrastructure and automated resource protocols for modern film production.",
+    bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     img: "/team/senior-dev.png"
   }
 ];
 
 function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
   const [isActive, setIsActive] = useState(false);
-  
+
   return (
-    <SpotlightCard 
-      className="overflow-hidden group cursor-pointer" 
+    <SpotlightCard
+      className="overflow-hidden group cursor-pointer"
       onClick={() => setIsActive(!isActive)}
     >
       <div className="flex flex-col h-full">
         <div className="aspect-square relative overflow-hidden bg-black">
-          <Image 
-            src={member.img} 
-            alt={member.name} 
-            fill 
+          <Image
+            src={member.img}
+            alt={member.name}
+            fill
             className={cn(
               "object-cover transition-all duration-700 ease-in-out",
               isActive ? "grayscale-0" : "grayscale"
@@ -99,16 +96,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-foreground selection:text-background">
       <Navbar />
-      
+
       <main>
         {/* Slide 1: Venture Overview (Hero) */}
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden border-b border-foreground/5">
           <div className="absolute inset-0 z-0">
-            <video 
-              src="https://assets.mixkit.co/videos/preview/mixkit-cinematographer-working-with-his-camera-4028-large.mp4" 
-              autoPlay 
-              muted 
-              loop 
+            <video
+              src="https://assets.mixkit.co/videos/preview/mixkit-cinematographer-working-with-his-camera-4028-large.mp4"
+              autoPlay
+              muted
+              loop
               className="w-full h-full object-cover opacity-20 grayscale"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
@@ -128,7 +125,7 @@ export default function Home() {
                   Professional <span className="text-foreground underline decoration-foreground/20 underline-offset-[12px]">Networking & Hiring</span>  Marketplace for the Film Industry
                 </h1>
                 <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-12">
-                 The platform connects Artists, Technicians, Directors, Producers, and Investors in a centralized digital ecosystem that simplifies talent discovery, collaboration, and project investment.
+                  The platform connects Artists, Technicians, Directors, Producers, and Investors in a centralized digital ecosystem that simplifies talent discovery, collaboration, and project investment.
                 </p>
               </motion.div>
             </div>
@@ -156,7 +153,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          
+
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
             <span className="text-label-stats text-[10px]">Scroll Narrative</span>
             <div className="w-[1px] h-12 bg-gradient-to-b from-foreground to-transparent" />
@@ -170,36 +167,36 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <div className="flex flex-col gap-20 items-center">
               <div className="w-full max-w-4xl mx-auto text-center">
-                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Case Study: Infra-Protocol V1</Badge>
-                <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">THE INFRASTRUCTURE <span className="text-foreground/40 italic">DOMINANCE</span></h2>
+                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry</Badge>
+                <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">Lorem Ipsum is simply dummy <span className="text-foreground/40 italic">DOMINANCE</span></h2>
                 <p className="text-body-narrative text-muted-foreground mb-12">
-                  Our core protocol focuses on the $400B+ gap in production logistics. By unifying capital, crew, and logistics into a single verified ledger, we reduce operational friction by 40%.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-32">
-               <SpotlightCard className="p-10 border-foreground/10">
-                  <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                    The Problem
-                  </h4>
-                  <p className="text-foreground leading-relaxed font-medium">Segmented, non-verified infrastructure leading to 30% capital leakage in production pipelines.</p>
-               </SpotlightCard>
-               <SpotlightCard className="p-10 border-foreground/10">
-                  <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    The Solution
-                  </h4>
-                  <p className="text-foreground leading-relaxed font-medium">A unified, secure infrastructure standard that centralizes trust and automates resource allocation.</p>
-               </SpotlightCard>
-               <SpotlightCard className="p-10 border-foreground/10">
-                  <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    The Outcome
-                  </h4>
-                  <p className="text-foreground leading-relaxed font-medium">Institutional-grade reliability that allows ventures to scale across markets with absolute transparency.</p>
-               </SpotlightCard>
+              <SpotlightCard className="p-10 border-foreground/10">
+                <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                  The Problem
+                </h4>
+                <p className="text-foreground leading-relaxed font-medium"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .</p>
+              </SpotlightCard>
+              <SpotlightCard className="p-10 border-foreground/10">
+                <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                  The Solution
+                </h4>
+                <p className="text-foreground leading-relaxed font-medium"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .</p>
+              </SpotlightCard>
+              <SpotlightCard className="p-10 border-foreground/10">
+                <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  The Outcome
+                </h4>
+                <p className="text-foreground leading-relaxed font-medium"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .</p>
+              </SpotlightCard>
             </div>
           </div>
         </section>
@@ -208,10 +205,10 @@ export default function Home() {
         <section className="py-40 bg-secondary/10 border-b border-foreground/5 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="mb-20">
-              <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">The Architects</Badge>
-              <h2 className="text-display-section !text-5xl text-foreground mb-6">VENTURE <span className="text-foreground/40 italic">LEADERSHIP</span></h2>
+              <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Our Team</Badge>
+              <h2 className="text-display-section !text-5xl text-foreground mb-6">The Core <span className="text-foreground/40 italic">TEAM</span></h2>
               <p className="text-body-narrative text-muted-foreground max-w-2xl">
-                Engineering the inevitable layer of cinematic commerce requires a fusion of industry foresight and technical precision.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
             </div>
 
@@ -225,56 +222,56 @@ export default function Home() {
 
         {/* Strategic Call to Action */}
         <section className="py-40 bg-background relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-           
-           <div className="container mx-auto px-6 relative z-10 text-center">
-              <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">SECURE YOUR POSITION IN THE <span className="text-foreground/40 italic">INFRASTRUCTURE ERA</span></h2>
-              <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-16">
-                 We are currently opening exclusive partnership access for strategic film industry leaders and venture partners. Validate your vision with our protocol.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center gap-6">
-                 <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
-                    Request Partner Access
-                 </Button>
-              </div>
-           </div>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">Lorem Ipsum is simply dummy <span className="text-foreground/40 italic">INFRASTRUCTURE ERA</span></h2>
+            <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-16">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. .
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
+                Request Partner Access
+              </Button>
+            </div>
+          </div>
         </section>
       </main>
 
       <footer className="bg-background py-24 border-t border-foreground/5">
-         <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-               <div>
-                  <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
-                  <p className="text-label-stats text-[10px] text-foreground/40">Architecting Industrial Standards for Film.</p>
-               </div>
-               <div className="flex gap-16">
-                  <div className="space-y-6">
-                     <h5 className="text-label-stats text-[10px] text-foreground">Venture</h5>
-                     <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                        <li className="hover:text-foreground cursor-pointer transition-colors">Infrastructure</li>
-                        <li className="hover:text-foreground cursor-pointer transition-colors">Partnerships</li>
-                        <li className="hover:text-foreground cursor-pointer transition-colors">Market Cap</li>
-                     </ul>
-                  </div>
-                  <div className="space-y-6">
-                     <h5 className="text-label-stats text-[10px] text-foreground">Governance</h5>
-                     <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                        <li className="hover:text-foreground cursor-pointer transition-colors">Security</li>
-                        <li className="hover:text-foreground cursor-pointer transition-colors">Privacy</li>
-                        <li className="hover:text-foreground cursor-pointer transition-colors">Legal</li>
-                     </ul>
-                  </div>
-               </div>
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+            <div>
+              <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
+              <p className="text-label-stats text-[10px] text-foreground/40">Architecting Industrial Standards for Film.</p>
             </div>
-            <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
-               <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA INFRASTRUCTURE INC. DESIGNED FOR INEVITABILITY.</p>
-               <div className="flex gap-8 text-label-stats text-[9px] text-foreground/40">
-                  <span className="hover:text-foreground cursor-pointer transition-colors">SYSTEM STATUS</span>
-               </div>
+            <div className="flex gap-16">
+              <div className="space-y-6">
+                <h5 className="text-label-stats text-[10px] text-foreground">Venture</h5>
+                <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Infrastructure</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Partnerships</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Market Cap</li>
+                </ul>
+              </div>
+              <div className="space-y-6">
+                <h5 className="text-label-stats text-[10px] text-foreground">Governance</h5>
+                <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Security</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Privacy</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Legal</li>
+                </ul>
+              </div>
             </div>
-         </div>
+          </div>
+          <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
+            <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA INFRASTRUCTURE INC. DESIGNED FOR INEVITABILITY.</p>
+            <div className="flex gap-8 text-label-stats text-[9px] text-foreground/40">
+              <span className="hover:text-foreground cursor-pointer transition-colors">SYSTEM STATUS</span>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
