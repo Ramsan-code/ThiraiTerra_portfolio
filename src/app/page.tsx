@@ -32,16 +32,16 @@ const CASE_STUDY_METRICS = [
 const TEAM_MEMBERS = [
   {
     id: "ceo",
-    name: "Ramsan",
+    name: "Ramsan Thaventhiran",
     role: "Co-Founder & CEO",
-    bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    bio: "",
     img: "/team/ceo.png"
   },
   {
     id: "dev-m",
-    name: "Sabesan",
+    name: "Sabesan Thaventhiran",
     role: "Digital Marketer",
-    bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    bio: "",
     img: "/team/dev-marketer.png"
   },
 
@@ -226,7 +226,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
-               Lorem Ipsum is simply dummy text
+                Lorem Ipsum is simply dummy text
               </Button>
             </div>
           </div>
