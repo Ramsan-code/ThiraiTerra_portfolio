@@ -46,7 +46,7 @@ export function SpotlightCard({ children, className, onMouseEnter, onMouseLeave,
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative rounded-[12px] border border-white/10 bg-secondary/20 overflow-hidden",
+        "relative rounded-[12px] border border-foreground/10 bg-secondary/20 overflow-hidden",
         className
       )}
       {...props}
@@ -55,7 +55,7 @@ export function SpotlightCard({ children, className, onMouseEnter, onMouseLeave,
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,.06), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, var(--color-foreground) / 0.06, transparent 40%)`,
         }}
       />
       {children}

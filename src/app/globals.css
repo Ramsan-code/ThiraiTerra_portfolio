@@ -28,8 +28,10 @@
   --color-popover-foreground: var(--popover-foreground);
   
   --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-bg-subtle: var(--bg-subtle);
   
   --radius-xl: 12px;
   --radius-lg: 8px;
@@ -41,6 +43,37 @@
 }
 
 :root {
+  --background: #F8F8F8;
+  --foreground: #0A0A0A;
+  
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #E5E5E5;
+  --secondary-foreground: #0A0A0A;
+  
+  --muted: #E5E5E5;
+  --muted-foreground: #52525B;
+  
+  --accent: #000000;
+  --accent-foreground: #FFFFFF;
+  
+  --border: #D4D4D8;
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --input: #D4D4D8;
+  --ring: #000000;
+  --bg-subtle: rgba(0, 0, 0, 0.03);
+  
+  --radius: 12px;
+}
+
+.dark {
   --background: #000000;
   --foreground: #FFFFFF;
   
@@ -63,18 +96,10 @@
   --accent-foreground: #000000;
   
   --border: #1F1F1F;
+  --border-subtle: rgba(255, 255, 255, 0.05);
   --input: #1F1F1F;
   --ring: #FFFFFF;
-  
-  --radius: 12px;
-}
-
-/* Force monochrome in dark mode too */
-.dark {
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --border: #1F1F1F;
-  --accent: #FFFFFF;
+  --bg-subtle: rgba(255, 255, 255, 0.03);
 }
 
 @layer base {
@@ -128,17 +153,17 @@
   }
   
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    @apply bg-foreground/5 backdrop-blur-xl border border-foreground/10;
   }
   
   .viewfinder {
-    @apply border border-white/10 rounded-[12px] overflow-hidden;
+    @apply border border-foreground/10 rounded-[12px] overflow-hidden;
   }
 
   .spotlight-card {
     position: relative;
     overflow: hidden;
-    @apply border border-white/5 bg-secondary/20 rounded-[12px];
+    @apply border border-foreground/5 bg-secondary/20 rounded-[12px];
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -146,7 +171,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.08), transparent 40%);
+    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), var(--color-foreground) / 0.08, transparent 40%);
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
@@ -157,7 +182,7 @@
   }
 
   .spotlight-card:hover {
-    @apply border-white/20;
+    @apply border-foreground/20;
     transform: translateY(-4px) rotateX(2deg) rotateY(2deg);
   }
 
@@ -170,8 +195,8 @@
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(var(--color-foreground) / 0.03 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-foreground) / 0.03 1px, transparent 1px);
     background-size: 32px 32px;
     pointer-events: none;
     z-index: 0;

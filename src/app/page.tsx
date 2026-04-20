@@ -23,12 +23,13 @@ const QUICK_STATS = [
   { label: "Target Market", value: "$400B+", detail: "Global Entertainment", icon: Globe },
   { label: "Business Model", value: "SaaS", detail: "Professional Infrastructure", icon: Database },
   { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
+  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
+  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
+  { label: "Venture Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
 ];
 
 const CASE_STUDY_METRICS = [
-  { label: "Production Efficiency", value: "+40%", icon: Clapperboard },
   { label: "Partner Network", value: "125+", icon: Handshake },
-  { label: "Scale Velocity", value: "3.2x", icon: TrendingUp },
 ];
 
 const TEAM_MEMBERS = [
@@ -81,11 +82,11 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
             <h3 className="text-display-section !text-xl">{member.name}</h3>
             <div className={cn(
               "w-2 h-2 rounded-full transition-colors duration-500",
-              isActive ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "bg-white/10"
+              isActive ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" : "bg-foreground/10"
             )} />
           </div>
-          <p className="text-label-stats text-[10px] text-white/40 mb-6 uppercase tracking-widest">{member.role}</p>
-          <p className="text-body-narrative !text-[13px] text-white/60 leading-relaxed italic">
+          <p className="text-label-stats text-[10px] text-foreground/40 mb-6 uppercase tracking-widest">{member.role}</p>
+          <p className="text-body-narrative !text-[13px] text-foreground/60 leading-relaxed italic">
             "{member.bio}"
           </p>
         </div>
@@ -96,12 +97,12 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-background overflow-x-hidden selection:bg-foreground selection:text-background">
       <Navbar />
       
       <main>
         {/* Slide 1: Venture Overview (Hero) */}
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden border-b border-white/5">
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden border-b border-foreground/5">
           <div className="absolute inset-0 z-0">
             <video 
               src="https://assets.mixkit.co/videos/preview/mixkit-cinematographer-working-with-his-camera-4028-large.mp4" 
@@ -120,15 +121,14 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 glimmer-badge mb-8">
-                  <span className="text-label-stats text-white/60">Venture Milestone 2026</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-foreground/10 bg-foreground/5 glimmer-badge mb-8">
+                  <span className="text-label-stats text-foreground/60">Proposal Cover Letter</span>
                 </div>
                 <h1 className="text-display-hero max-w-5xl mx-auto mb-8 tracking-[-0.03em] break-words">
-                  Architecting is the <span className="text-white underline decoration-white/20 underline-offset-[12px]">Future Foundation</span> of Modern Cinema
+                  Professional <span className="text-foreground underline decoration-foreground/20 underline-offset-[12px]">Networking & Hiring</span>  Marketplace for the Film Industry
                 </h1>
                 <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-12">
-                  ThiraiTerra reposition's professional film infrastructure into a scalable industry standard. 
-                  We don't just build apps; we engineer the inevitable layer of cinematic commerce.
+                 The platform connects Artists, Technicians, Directors, Producers, and Investors in a centralized digital ecosystem that simplifies talent discovery, collaboration, and project investment.
                 </p>
               </motion.div>
             </div>
@@ -142,16 +142,15 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.1 }}
                 >
-                  <SpotlightCard className="p-8 group hover:border-white/20">
+                  <SpotlightCard className="p-8 group hover:border-foreground/20">
                     <div className="flex items-start justify-between mb-6">
-                      <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-white/30 transition-colors">
-                        <stat.icon className="w-5 h-5 text-white" />
+                      <div className="p-3 rounded-xl bg-foreground/5 border border-foreground/10 group-hover:border-foreground/30 transition-colors">
+                        <stat.icon className="w-5 h-5 text-foreground" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/40">Data Segment</span>
                     </div>
-                    <h3 className="text-label-stats text-white/60 mb-1">{stat.label}</h3>
-                    <div className="text-display-section !text-4xl text-white mb-2">{stat.value}</div>
-                    <p className="text-[11px] text-white/40 uppercase tracking-widest">{stat.detail}</p>
+                    <h3 className="text-label-stats text-foreground/60 mb-1">{stat.label}</h3>
+                    <div className="text-display-section !text-4xl text-foreground mb-2">{stat.value}</div>
+                    <p className="text-[11px] text-foreground/40 uppercase tracking-widest">{stat.detail}</p>
                   </SpotlightCard>
                 </motion.div>
               ))}
@@ -160,67 +159,57 @@ export default function Home() {
           
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
             <span className="text-label-stats text-[10px]">Scroll Narrative</span>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+            <div className="w-[1px] h-12 bg-gradient-to-b from-foreground to-transparent" />
           </div>
         </section>
 
 
 
         {/* Slide 2: Project Case Study (ThiraiTerra Spotlight) */}
-        <section className="py-40 bg-background blueprint border-b border-white/5">
+        <section className="py-40 bg-background blueprint border-b border-foreground/5">
           <div className="container mx-auto px-6">
             <div className="flex flex-col gap-20 items-center">
               <div className="w-full max-w-4xl mx-auto text-center">
-                <Badge className="bg-white/5 text-white/60 mb-6 border-white/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Case Study: Infra-Protocol V1</Badge>
-                <h2 className="text-display-section !text-5xl text-white mb-8 leading-tight">THE INFRASTRUCTURE <span className="text-white/40 italic">DOMINANCE</span></h2>
+                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Case Study: Infra-Protocol V1</Badge>
+                <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">THE INFRASTRUCTURE <span className="text-foreground/40 italic">DOMINANCE</span></h2>
                 <p className="text-body-narrative text-muted-foreground mb-12">
                   Our core protocol focuses on the $400B+ gap in production logistics. By unifying capital, crew, and logistics into a single verified ledger, we reduce operational friction by 40%.
                 </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-                  {CASE_STUDY_METRICS.map((m, i) => (
-                    <div key={i} className="flex flex-col border-white/10 px-6 py-2 items-center">
-                       <m.icon className="w-4 h-4 text-white/40 mb-4" />
-                       <span className="text-display-section !text-2xl mb-1">{m.value}</span>
-                       <span className="text-label-stats text-[10px] text-white/40">{m.label}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-32">
-               <SpotlightCard className="p-10 border-white/10">
-                  <h4 className="text-label-stats text-white/40 mb-6 flex items-center gap-2">
+               <SpotlightCard className="p-10 border-foreground/10">
+                  <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
                     The Problem
                   </h4>
-                  <p className="text-white leading-relaxed font-medium">Segmented, non-verified infrastructure leading to 30% capital leakage in production pipelines.</p>
+                  <p className="text-foreground leading-relaxed font-medium">Segmented, non-verified infrastructure leading to 30% capital leakage in production pipelines.</p>
                </SpotlightCard>
-               <SpotlightCard className="p-10 border-white/10">
-                  <h4 className="text-label-stats text-white/40 mb-6 flex items-center gap-2">
+               <SpotlightCard className="p-10 border-foreground/10">
+                  <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                     The Solution
                   </h4>
-                  <p className="text-white leading-relaxed font-medium">A unified, secure infrastructure standard that centralizes trust and automates resource allocation.</p>
+                  <p className="text-foreground leading-relaxed font-medium">A unified, secure infrastructure standard that centralizes trust and automates resource allocation.</p>
                </SpotlightCard>
-               <SpotlightCard className="p-10 border-white/10">
-                  <h4 className="text-label-stats text-white/40 mb-6 flex items-center gap-2">
+               <SpotlightCard className="p-10 border-foreground/10">
+                  <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     The Outcome
                   </h4>
-                  <p className="text-white leading-relaxed font-medium">Institutional-grade reliability that allows ventures to scale across markets with absolute transparency.</p>
+                  <p className="text-foreground leading-relaxed font-medium">Institutional-grade reliability that allows ventures to scale across markets with absolute transparency.</p>
                </SpotlightCard>
             </div>
           </div>
         </section>
 
         {/* Slide 3: Leadership (Venture Architects) */}
-        <section className="py-40 bg-secondary/10 border-b border-white/5 relative overflow-hidden">
+        <section className="py-40 bg-secondary/10 border-b border-foreground/5 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="mb-20">
-              <Badge className="bg-white/5 text-white/60 mb-6 border-white/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">The Architects</Badge>
-              <h2 className="text-display-section !text-5xl text-white mb-6">VENTURE <span className="text-white/40 italic">LEADERSHIP</span></h2>
+              <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">The Architects</Badge>
+              <h2 className="text-display-section !text-5xl text-foreground mb-6">VENTURE <span className="text-foreground/40 italic">LEADERSHIP</span></h2>
               <p className="text-body-narrative text-muted-foreground max-w-2xl">
                 Engineering the inevitable layer of cinematic commerce requires a fusion of industry foresight and technical precision.
               </p>
@@ -236,16 +225,16 @@ export default function Home() {
 
         {/* Strategic Call to Action */}
         <section className="py-40 bg-background relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
            
            <div className="container mx-auto px-6 relative z-10 text-center">
-              <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">SECURE YOUR POSITION IN THE <span className="text-white/40 italic">INFRASTRUCTURE ERA</span></h2>
+              <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">SECURE YOUR POSITION IN THE <span className="text-foreground/40 italic">INFRASTRUCTURE ERA</span></h2>
               <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-16">
                  We are currently opening exclusive partnership access for strategic film industry leaders and venture partners. Validate your vision with our protocol.
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                 <Button className="h-16 px-12 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/90 transition-all hover:scale-105">
+                 <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
                     Request Partner Access
                  </Button>
               </div>
@@ -253,36 +242,36 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-background py-24 border-t border-white/5">
+      <footer className="bg-background py-24 border-t border-foreground/5">
          <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
                <div>
-                  <span className="text-display-section !text-2xl text-white block mb-4 tracking-[-0.03em]">THIRAI<span className="text-white/40 italic">TERRA</span></span>
-                  <p className="text-label-stats text-[10px] text-white/40">Architecting Industrial Standards for Film.</p>
+                  <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
+                  <p className="text-label-stats text-[10px] text-foreground/40">Architecting Industrial Standards for Film.</p>
                </div>
                <div className="flex gap-16">
                   <div className="space-y-6">
-                     <h5 className="text-label-stats text-[10px] text-white">Venture</h5>
-                     <ul className="space-y-3 text-label-stats text-[10px] text-white/40">
-                        <li className="hover:text-white cursor-pointer transition-colors">Infrastructure</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">Partnerships</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">Market Cap</li>
+                     <h5 className="text-label-stats text-[10px] text-foreground">Venture</h5>
+                     <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
+                        <li className="hover:text-foreground cursor-pointer transition-colors">Infrastructure</li>
+                        <li className="hover:text-foreground cursor-pointer transition-colors">Partnerships</li>
+                        <li className="hover:text-foreground cursor-pointer transition-colors">Market Cap</li>
                      </ul>
                   </div>
                   <div className="space-y-6">
-                     <h5 className="text-label-stats text-[10px] text-white">Governance</h5>
-                     <ul className="space-y-3 text-label-stats text-[10px] text-white/40">
-                        <li className="hover:text-white cursor-pointer transition-colors">Security</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">Privacy</li>
-                        <li className="hover:text-white cursor-pointer transition-colors">Legal</li>
+                     <h5 className="text-label-stats text-[10px] text-foreground">Governance</h5>
+                     <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
+                        <li className="hover:text-foreground cursor-pointer transition-colors">Security</li>
+                        <li className="hover:text-foreground cursor-pointer transition-colors">Privacy</li>
+                        <li className="hover:text-foreground cursor-pointer transition-colors">Legal</li>
                      </ul>
                   </div>
                </div>
             </div>
-            <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 gap-4">
-               <p className="text-label-stats text-[9px] text-white/20 tracking-[0.3em]">© 2026 THIRAITERRA INFRASTRUCTURE INC. DESIGNED FOR INEVITABILITY.</p>
-               <div className="flex gap-8 text-label-stats text-[9px] text-white/40">
-                  <span className="hover:text-white cursor-pointer transition-colors">SYSTEM STATUS</span>
+            <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
+               <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA INFRASTRUCTURE INC. DESIGNED FOR INEVITABILITY.</p>
+               <div className="flex gap-8 text-label-stats text-[9px] text-foreground/40">
+                  <span className="hover:text-foreground cursor-pointer transition-colors">SYSTEM STATUS</span>
                </div>
             </div>
          </div>

@@ -20,18 +20,27 @@ export const metadata: Metadata = {
 
 
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark h-full">
+    <html lang="en" suppressHydrationWarning className="h-full">
       <body
-        className={`${geologica.variable} antialiased selection:bg-amber-500/30 overflow-x-hidden min-h-screen flex flex-col`}
+        className={`${geologica.variable} antialiased selection:bg-amber-500/30 overflow-x-hidden min-h-screen flex flex-col transition-colors duration-300`}
       >
-        {children}
-        <VisualEditsMessenger />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+          <VisualEditsMessenger />
+        </ThemeProvider>
       </body>
     </html>
   );
