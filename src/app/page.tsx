@@ -44,6 +44,13 @@ const TEAM_MEMBERS = [
     bio: "",
     img: "/team/dev-marketer.png"
   },
+   {
+    id: "dev-m",
+    name: "Lajeeban Jeyakodi",
+    role: "Full Stack Web Developer",
+    bio: "",
+    img: "/team/senior-dev.png"
+  },
 
 ];
 

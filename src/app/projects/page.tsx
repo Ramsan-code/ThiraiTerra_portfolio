@@ -118,30 +118,6 @@ export default function ProjectShowcase() {
                 The Team
               </TabsTrigger>
             </TabsList>
-            
-            <TabsContent value="look" className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-               <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-                  <div className="col-span-2 md:col-span-3 h-64 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&h=400&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <span className="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-[0.2em]">Lighting Mood</span>
-                  </div>
-                  <div className="col-span-2 md:col-span-3 h-64 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=600&h=400&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <span className="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-[0.2em]">Color Palette</span>
-                  </div>
-                  <div className="col-span-1 md:col-span-2 h-48 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1520034475321-cbe63696469a?q=80&w=600&h=400&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </div>
-                  <div className="col-span-1 md:col-span-2 h-48 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1510511459019-5dee99c4fd56?q=80&w=600&h=400&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </div>
-                  <div className="col-span-2 h-48 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=600&h=400&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </div>
-               </div>
-            </TabsContent>
 
             <TabsContent value="story" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                <div className="prose prose-invert max-w-none">
