@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { FacebookPixel } from "@/components/facebook-pixel";
 
 export default function RootLayout({
   children,
@@ -38,6 +39,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <FacebookPixel />
           {children}
           <VisualEditsMessenger />
         </ThemeProvider>
