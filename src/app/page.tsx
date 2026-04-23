@@ -20,13 +20,9 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { cn } from "@/lib/utils";
 
 const QUICK_STATS = [
-  { label: "Target Market", value: "", detail: "Global Entertainment", icon: Globe },
-  { label: "Business Model", value: "SaaS", detail: "Professional Infrastructure", icon: Database },
-  { label: "Focus", value: "Film Infra", detail: "Industry Standard", icon: Zap },
-];
-
-const CASE_STUDY_METRICS = [
-  { label: "Partner Network", value: "125+", icon: Handshake },
+  { label: "Market Opportunity", value: "$50M+", detail: "Sri Lankan Film & Media", icon: Globe },
+  { label: "Revenue Model", value: "SaaS", detail: "Tiered Subscriptions", icon: Database },
+  { label: "Target Growth", value: "40%", detail: "Annual Talent Acquisition", icon: TrendingUp },
 ];
 
 const TEAM_MEMBERS = [
@@ -34,24 +30,54 @@ const TEAM_MEMBERS = [
     id: "ceo",
     name: "Ramsan Thaventhiran",
     role: "Co-Founder & CEO",
-    bio: "",
+    bio: "Visionary strategist focused on bridging the gap between traditional cinema workflows and modern digital infrastructure.",
     img: "/team/ceo.png"
   },
   {
-    id: "dev-m",
+    id: "marketer",
     name: "Sabesan Thaventhiran",
     role: "Digital Marketer",
-    bio: "",
+    bio: "Growth specialist with expertise in building niche community ecosystems and high-conversion digital campaigns.",
     img: "/team/dev-marketer.png"
   },
-   {
-    id: "dev-m",
+  {
+    id: "developer",
     name: "Lajeeban Jeyakodi",
     role: "Full Stack Web Developer",
-    bio: "",
+    bio: "Systems architect specializing in high-performance marketplace platforms and secure API integrations.",
     img: "/team/senior-dev.png"
   },
+];
 
+const REVENUE_TIERS = [
+  {
+    title: "Indie Talent",
+    price: "Free",
+    features: ["Digital Portfolio", "Project Discovery", "Public Profile"],
+    cta: "Start Building",
+    isPrimary: false
+  },
+  {
+    title: "Pro Creator",
+    price: "LKR 2,500/mo",
+    features: ["Verified Badge", "Featured Placement", "Early Access to Jobs", "Analytics Dashboard"],
+    cta: "Go Pro",
+    isPrimary: true
+  },
+  {
+    title: "Studio/Agency",
+    price: "LKR 15,000/mo",
+    features: ["Unlimited Job Postings", "Advanced Talent Filters", "Team Collaboration", "Priority Support"],
+    cta: "Contact Sales",
+    isPrimary: false
+  }
+];
+
+const MILESTONES = [
+  { period: "Q3 2026", title: "Beta Launch", detail: "Initial directory launch for Colombo-based talent and production houses." },
+  { period: "Q4 2026", title: "Monetization", detail: "Rollout of Pro tiers and integrated payment gateway for local and USD payments." },
+  { period: "Q1 2027", title: "Expansion", detail: "Partnership with regional film corporations and regional talent hubs." },
+  { period: "Q2 2027", title: "Project Escrow", detail: "Implementation of secure project bidding and payment escrow systems." },
 ];
 
 function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
@@ -120,13 +146,13 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-foreground/10 bg-foreground/5 glimmer-badge mb-8">
-                  <span className="text-label-stats text-foreground/60">Proposal Cover Letter</span>
+                  <span className="text-label-stats text-foreground/60 uppercase tracking-tighter">Investment Proposal 2026</span>
                 </div>
                 <h1 className="text-display-hero max-w-5xl mx-auto mb-8 tracking-[-0.03em] break-words">
-                  Professional <span className="text-foreground underline decoration-foreground/20 underline-offset-[12px]">Networking & Hiring</span>  Marketplace for the Film Industry
+                  The Digital Infrastructure for the <span className="text-foreground underline decoration-foreground/20 underline-offset-[12px]">Future of Cinema</span>
                 </h1>
                 <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-12">
-                  The platform connects Artists, Technicians, Directors, Producers, and Investors in a centralized digital ecosystem that simplifies talent discovery, collaboration, and project investment.
+                  ThiraiTerra is Sri Lanka's first professional networking and hiring marketplace designed exclusively for the film industry—connecting talent, producers, and investors in a high-efficiency digital ecosystem.
                 </p>
               </motion.div>
             </div>
@@ -156,22 +182,20 @@ export default function Home() {
           </div>
 
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
-            <span className="text-label-stats text-[10px]">Scroll Narrative</span>
+            <span className="text-label-stats text-[10px]">Strategic Roadmap</span>
             <div className="w-[1px] h-12 bg-gradient-to-b from-foreground to-transparent" />
           </div>
         </section>
 
-
-
-        {/* Slide 2: Project Case Study (ThiraiTerra Spotlight) */}
+        {/* Slide 2: The Core Problem & Solution */}
         <section className="py-40 bg-background blueprint border-b border-foreground/5">
           <div className="container mx-auto px-6">
             <div className="flex flex-col gap-20 items-center">
               <div className="w-full max-w-4xl mx-auto text-center">
-                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry</Badge>
-                <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">Lorem Ipsum is simply dummy <span className="text-foreground/40 italic">DOMINANCE</span></h2>
+                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Strategic Analysis</Badge>
+                <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">Solving the Fragmentation of <span className="text-foreground/40 italic">FILM PRODUCTION</span></h2>
                 <p className="text-body-narrative text-muted-foreground mb-12">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                  The Sri Lankan film industry currently relies on fragmented word-of-mouth networks and offline directories. This inefficiency leads to delayed productions, talent invisibility, and high friction for international co-productions.
                 </p>
               </div>
             </div>
@@ -182,34 +206,198 @@ export default function Home() {
                   <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
                   The Problem
                 </h4>
-                <p className="text-foreground leading-relaxed font-medium"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .</p>
+                <p className="text-foreground leading-relaxed font-medium">Opaque talent discovery processes and lack of verified portfolios make hiring skilled technicians a time-consuming risk for producers.</p>
               </SpotlightCard>
               <SpotlightCard className="p-10 border-foreground/10">
                 <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                   The Solution
                 </h4>
-                <p className="text-foreground leading-relaxed font-medium"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .</p>
+                <p className="text-foreground leading-relaxed font-medium">A centralized digital directory with cinematic-grade portfolios, verified credentials, and direct hiring workflows.</p>
               </SpotlightCard>
               <SpotlightCard className="p-10 border-foreground/10">
                 <h4 className="text-label-stats text-foreground/40 mb-6 flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  The Outcome
+                  The Impact
                 </h4>
-                <p className="text-foreground leading-relaxed font-medium"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, .</p>
+                <p className="text-foreground leading-relaxed font-medium">70% reduction in talent sourcing time and increased visibility for local talent on a global stage.</p>
               </SpotlightCard>
             </div>
           </div>
         </section>
 
-        {/* Slide 3: Leadership (Venture Architects) */}
+        {/* Slide 3: Revenue Model & Unit Economics */}
+        <section className="py-40 bg-secondary/5 border-b border-foreground/5">
+          <div className="container mx-auto px-6">
+            <div className="mb-20 text-center">
+              <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Business Model</Badge>
+              <h2 className="text-display-section !text-5xl text-foreground mb-6">Sustainable <span className="text-foreground/40 italic">MONETIZATION</span></h2>
+              <p className="text-body-narrative text-muted-foreground max-w-2xl mx-auto">
+                Our subscription-led model ensures consistent cash flow while lowering the barrier to entry for emerging artists and providing high-value tools for studios.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {REVENUE_TIERS.map((tier, i) => (
+                <SpotlightCard key={i} className={cn("p-10 flex flex-col h-full", tier.isPrimary ? "border-foreground/30 bg-foreground/[0.02]" : "border-foreground/5")}>
+                  <h3 className="text-xl font-bold mb-2 tracking-tight">{tier.title}</h3>
+                  <div className="text-3xl font-bold mb-8 text-foreground/80">{tier.price}</div>
+                  <ul className="space-y-4 mb-12 flex-1">
+                    {tier.features.map((feat, j) => (
+                      <li key={j} className="flex items-center gap-3 text-sm text-foreground/60">
+                        <div className="w-1 h-1 rounded-full bg-foreground/40" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className={cn("w-full h-12 uppercase tracking-widest text-[10px] font-bold rounded-none", tier.isPrimary ? "bg-foreground text-background" : "bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/5")}>
+                    {tier.cta}
+                  </Button>
+                </SpotlightCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 4: User Workflows (How it Works) */}
+        <section className="py-40 bg-secondary/5 border-b border-foreground/5">
+          <div className="container mx-auto px-6">
+            <div className="mb-20 text-center">
+              <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Operational Excellence</Badge>
+              <h2 className="text-display-section !text-5xl text-foreground mb-6">Streamlined <span className="text-foreground/40 italic">WORKFLOWS</span></h2>
+              <p className="text-body-narrative text-muted-foreground max-w-2xl mx-auto">
+                Designed to minimize friction at every stage of the production lifecycle—from initial discovery to final contract.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center text-foreground font-bold">1</div>
+                <h4 className="text-xl font-bold">For Talent</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Create a cinematic profile, upload your reel, and get discovered by producers looking for your specific skill set and equipment.</p>
+              </div>
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center text-foreground font-bold">2</div>
+                <h4 className="text-xl font-bold">For Producers</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Post requirements, filter through verified talent, and manage applicants through a centralized dashboard without leaving the platform.</p>
+              </div>
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center text-foreground font-bold">3</div>
+                <h4 className="text-xl font-bold">For Investors</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Review vetted project pitches, analyze team credentials, and track production milestones with real-time data transparency.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 5: Competitive Edge & Differentiation */}
+        <section className="py-40 bg-background border-b border-foreground/5 relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Market Positioning</Badge>
+                <h2 className="text-display-section !text-5xl text-foreground mb-8">Our <span className="text-foreground/40 italic">COMPETITIVE EDGE</span></h2>
+                <div className="space-y-8">
+                  <div className="flex gap-6">
+                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-foreground mt-2" />
+                    <div>
+                      <h5 className="font-bold mb-2 uppercase tracking-widest text-[10px]">Hyper-Local Infrastructure</h5>
+                      <p className="text-sm text-muted-foreground">Unlike global platforms, ThiraiTerra is built specifically for the Sri Lankan ecosystem, integrating local rate cards and technical standards.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-6">
+                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-foreground mt-2" />
+                    <div>
+                      <h5 className="font-bold mb-2 uppercase tracking-widest text-[10px]">Verification Engine</h5>
+                      <p className="text-sm text-muted-foreground">Every profile is vetted by industry veterans to ensure data authenticity, reducing hiring risks for major studios.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-6">
+                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-foreground mt-2" />
+                    <div>
+                      <h5 className="font-bold mb-2 uppercase tracking-widest text-[10px]">End-to-End Escrow</h5>
+                      <p className="text-sm text-muted-foreground">Future-proof payment systems designed to handle both LKR and USD, facilitating international co-productions seamlessly.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-8 rounded-3xl bg-foreground/5 border border-foreground/10 text-center">
+                  <div className="text-3xl font-bold mb-1">0%</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-widest">Commission for Indie Talent</div>
+                </div>
+                <div className="p-8 rounded-3xl bg-foreground/5 border border-foreground/10 text-center">
+                  <div className="text-3xl font-bold mb-1">24h</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-widest">Verification Turnaround</div>
+                </div>
+                <div className="p-8 rounded-3xl bg-foreground/5 border border-foreground/10 text-center">
+                  <div className="text-3xl font-bold mb-1">100%</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-widest">Focused on Sri Lankan Talent</div>
+                </div>
+                <div className="p-8 rounded-3xl bg-foreground/5 border border-foreground/10 text-center">
+                  <div className="text-3xl font-bold mb-1">SaaS</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-widest">Infrastructure as a Service</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 6: Go-To-Market & Roadmap */}
+        <section className="py-40 bg-background border-b border-foreground/5 relative overflow-hidden">
+           <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+              <div>
+                <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Execution Strategy</Badge>
+                <h2 className="text-display-section !text-5xl text-foreground mb-12">The Path to <span className="text-foreground/40 italic">MARKET DOMINANCE</span></h2>
+                <div className="space-y-12">
+                  <div className="group">
+                    <h4 className="text-label-stats text-foreground mb-2 flex items-center gap-3">
+                       <span className="text-foreground/20">01</span> Market Penetration
+                    </h4>
+                    <p className="text-body-narrative text-muted-foreground text-sm">Focusing on high-density production hubs in Colombo to build initial liquidity of 500+ verified profiles.</p>
+                  </div>
+                  <div className="group">
+                    <h4 className="text-label-stats text-foreground mb-2 flex items-center gap-3">
+                       <span className="text-foreground/20">02</span> Community Integration
+                    </h4>
+                    <p className="text-body-narrative text-muted-foreground text-sm">Direct partnerships with film schools and technical associations (DOPs, Editors) to ensure data authenticity.</p>
+                  </div>
+                  <div className="group">
+                    <h4 className="text-label-stats text-foreground mb-2 flex items-center gap-3">
+                       <span className="text-foreground/20">03</span> Scaling Network Effects
+                    </h4>
+                    <p className="text-body-narrative text-muted-foreground text-sm">Launching the project bidding engine to facilitate full-cycle production hiring and secure payments.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-foreground/5 border border-foreground/10 p-12 rounded-3xl">
+                <h3 className="text-label-stats text-foreground/40 mb-10 uppercase tracking-[0.2em] text-[10px]">2026-2027 Roadmap</h3>
+                <div className="space-y-10 relative">
+                  <div className="absolute left-[7px] top-2 bottom-2 w-[1px] bg-foreground/10" />
+                  {MILESTONES.map((m, i) => (
+                    <div key={i} className="relative pl-10">
+                      <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full bg-background border-2 border-foreground/40" />
+                      <div className="text-[10px] text-foreground/40 font-bold mb-1">{m.period}</div>
+                      <h5 className="text-foreground font-bold mb-1">{m.title}</h5>
+                      <p className="text-xs text-foreground/50">{m.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slide 7: Leadership (Venture Architects) */}
         <section className="py-40 bg-secondary/10 border-b border-foreground/5 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="mb-20">
               <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Our Team</Badge>
-              <h2 className="text-display-section !text-5xl text-foreground mb-6">The Core <span className="text-foreground/40 italic">TEAM</span></h2>
+              <h2 className="text-display-section !text-5xl text-foreground mb-6">The Core <span className="text-foreground/40 italic">ARCHITECTURE</span></h2>
               <p className="text-body-narrative text-muted-foreground max-w-2xl">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Combining expertise in strategic business development, digital marketing, and full-stack engineering to build the future of film infrastructure.
               </p>
             </div>
 
@@ -226,14 +414,17 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
 
           <div className="container mx-auto px-6 relative z-10 text-center">
-            <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">Lorem Ipsum is simply dummy <span className="text-foreground/40 italic">INFRASTRUCTURE ERA</span></h2>
+            <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">Empowering the Next <span className="text-foreground/40 italic">CINEMATIC WAVE</span></h2>
             <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-16">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. .
+              Join us in building the digital backbone of the Sri Lankan film industry. Whether you are an investor, a producer, or a creator, ThiraiTerra is your gateway to the ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
-                Lorem Ipsum is simply dummy text
+                Download Full Pitch Deck
+              </Button>
+              <Button className="h-16 px-12 bg-transparent border border-foreground/20 text-foreground font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/5 transition-all">
+                Request Early Access
               </Button>
             </div>
           </div>
@@ -245,31 +436,32 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
             <div>
               <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
-              <p className="text-label-stats text-[10px] text-foreground/40">loream</p>
+              <p className="text-label-stats text-[10px] text-foreground/40 max-w-xs">Building the professional infrastructure for the Sri Lankan film industry.</p>
             </div>
             <div className="flex gap-16">
               <div className="space-y-6">
-                <h5 className="text-label-stats text-[10px] text-foreground">loream</h5>
+                <h5 className="text-label-stats text-[10px] text-foreground uppercase tracking-widest">Platform</h5>
                 <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Talent Directory</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Project Bidding</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Investor Portal</li>
                 </ul>
               </div>
               <div className="space-y-6">
-                <h5 className="text-label-stats text-[10px] text-foreground">loream</h5>
+                <h5 className="text-label-stats text-[10px] text-foreground uppercase tracking-widest">Company</h5>
                 <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">loream</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Our Vision</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Leadership</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Roadmap</li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
-            <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA .</p>
+            <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA. ALL RIGHTS RESERVED.</p>
             <div className="flex gap-8 text-label-stats text-[9px] text-foreground/40">
-              <span className="hover:text-foreground cursor-pointer transition-colors">loream</span>
+              <span className="hover:text-foreground cursor-pointer transition-colors">PRIVACY POLICY</span>
+              <span className="hover:text-foreground cursor-pointer transition-colors">TERMS OF SERVICE</span>
             </div>
           </div>
         </div>
