@@ -20,9 +20,9 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { cn } from "@/lib/utils";
 
 const QUICK_STATS = [
-  { label: "Market Opportunity", value: "$50M+", detail: "Sri Lankan Film & Media", icon: Globe },
+  { label: "Market Opportunity", value: "", detail: "Global Film & Media", icon: Globe },
   { label: "Revenue Model", value: "SaaS", detail: "Tiered Subscriptions", icon: Database },
-  { label: "Target Growth", value: "40%", detail: "Annual Talent Acquisition", icon: TrendingUp },
+  { label: "Target Growth", value: "", detail: "Annual Talent Acquisition", icon: TrendingUp },
 ];
 
 const TEAM_MEMBERS = [
@@ -51,22 +51,22 @@ const TEAM_MEMBERS = [
 
 const REVENUE_TIERS = [
   {
-    title: "Indie Talent",
-    price: "Free",
+    title: "Talent",
+    price: "1 USD / Month",
     features: ["Digital Portfolio", "Project Discovery", "Public Profile"],
     cta: "Start Building",
     isPrimary: false
   },
   {
     title: "Pro Creator",
-    price: "LKR 2,500/mo",
+    price: "Comming Soon",
     features: ["Verified Badge", "Featured Placement", "Early Access to Jobs", "Analytics Dashboard"],
     cta: "Go Pro",
     isPrimary: true
   },
   {
     title: "Studio/Agency",
-    price: "LKR 15,000/mo",
+    price: "Comming Soon",
     features: ["Unlimited Job Postings", "Advanced Talent Filters", "Team Collaboration", "Priority Support"],
     cta: "Contact Sales",
     isPrimary: false
@@ -152,7 +152,7 @@ export default function Home() {
                   The Digital Infrastructure for the <span className="text-foreground underline decoration-foreground/20 underline-offset-[12px]">Future of Cinema</span>
                 </h1>
                 <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-12">
-                  ThiraiTerra is Sri Lanka's first professional networking and hiring marketplace designed exclusively for the film industry—connecting talent, producers, and investors in a high-efficiency digital ecosystem.
+                  ThiraiTerra is a Networking and hiring marketplace designed exclusively for the film industry—connecting talent, producers, and investors in a high-efficiency digital ecosystem.
                 </p>
               </motion.div>
             </div>
@@ -195,7 +195,7 @@ export default function Home() {
                 <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Strategic Analysis</Badge>
                 <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">Solving the Fragmentation of <span className="text-foreground/40 italic">FILM PRODUCTION</span></h2>
                 <p className="text-body-narrative text-muted-foreground mb-12">
-                  The Sri Lankan film industry currently relies on fragmented word-of-mouth networks and offline directories. This inefficiency leads to delayed productions, talent invisibility, and high friction for international co-productions.
+                  The  relies on fragmented word-of-mouth networks and offline directories. This inefficiency leads to delayed productions, talent invisibility, and high friction for international co-productions.
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function Home() {
               <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Business Model</Badge>
               <h2 className="text-display-section !text-5xl text-foreground mb-6">Sustainable <span className="text-foreground/40 italic">MONETIZATION</span></h2>
               <p className="text-body-narrative text-muted-foreground max-w-2xl mx-auto">
-                Our subscription-led model ensures consistent cash flow while lowering the barrier to entry for emerging artists and providing high-value tools for studios.
+                Our subscription-led model ensures consistent cash flow while lowering the barrier to entry for emerging artists .
               </p>
             </div>
 
@@ -250,9 +250,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Button className={cn("w-full h-12 uppercase tracking-widest text-[10px] font-bold rounded-none", tier.isPrimary ? "bg-foreground text-background" : "bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/5")}>
-                    {tier.cta}
-                  </Button>
+
                 </SpotlightCard>
               ))}
             </div>
@@ -345,7 +343,7 @@ export default function Home() {
 
         {/* Slide 6: Go-To-Market & Roadmap */}
         <section className="py-40 bg-background border-b border-foreground/5 relative overflow-hidden">
-           <div className="container mx-auto px-6">
+          <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <div>
                 <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Execution Strategy</Badge>
@@ -353,19 +351,19 @@ export default function Home() {
                 <div className="space-y-12">
                   <div className="group">
                     <h4 className="text-label-stats text-foreground mb-2 flex items-center gap-3">
-                       <span className="text-foreground/20">01</span> Market Penetration
+                      <span className="text-foreground/20">01</span> Market Penetration
                     </h4>
                     <p className="text-body-narrative text-muted-foreground text-sm">Focusing on high-density production hubs in Colombo to build initial liquidity of 500+ verified profiles.</p>
                   </div>
                   <div className="group">
                     <h4 className="text-label-stats text-foreground mb-2 flex items-center gap-3">
-                       <span className="text-foreground/20">02</span> Community Integration
+                      <span className="text-foreground/20">02</span> Community Integration
                     </h4>
                     <p className="text-body-narrative text-muted-foreground text-sm">Direct partnerships with film schools and technical associations (DOPs, Editors) to ensure data authenticity.</p>
                   </div>
                   <div className="group">
                     <h4 className="text-label-stats text-foreground mb-2 flex items-center gap-3">
-                       <span className="text-foreground/20">03</span> Scaling Network Effects
+                      <span className="text-foreground/20">03</span> Scaling Network Effects
                     </h4>
                     <p className="text-body-narrative text-muted-foreground text-sm">Launching the project bidding engine to facilitate full-cycle production hiring and secure payments.</p>
                   </div>
