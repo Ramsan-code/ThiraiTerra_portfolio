@@ -296,17 +296,11 @@ export default function Home() {
                 <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Market Positioning</Badge>
                 <h2 className="text-display-section !text-5xl text-foreground mb-8">Our <span className="text-foreground/40 italic">COMPETITIVE EDGE</span></h2>
                 <div className="space-y-8">
+
                   <div className="flex gap-6">
                     <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-foreground mt-2" />
                     <div>
-                      <h5 className="font-bold mb-2 uppercase tracking-widest text-[10px]">Hyper-Local Infrastructure</h5>
-                      <p className="text-sm text-muted-foreground">Unlike global platforms, ThiraiTerra is built specifically for the Sri Lankan ecosystem, integrating local rate cards and technical standards.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-foreground mt-2" />
-                    <div>
-                      <h5 className="font-bold mb-2 uppercase tracking-widest text-[10px]">Verification Engine</h5>
+                      <h5 className="font-bold mb-2 uppercase tracking-widest text-[10px]">Verified Network</h5>
                       <p className="text-sm text-muted-foreground">Every profile is vetted by industry veterans to ensure data authenticity, reducing hiring risks for major studios.</p>
                     </div>
                   </div>
