@@ -9,7 +9,8 @@ import {
   Globe,
   Database,
   Clapperboard,
-  Handshake
+  Handshake,
+  Loader2
 } from "lucide-react";
 import Image from "next/image";
 
@@ -18,6 +19,10 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 
 const QUICK_STATS = [
   { label: "Market Opportunity", value: "", detail: "Global Film & Media", icon: Globe },
@@ -47,6 +52,13 @@ const TEAM_MEMBERS = [
     bio: "Systems architect specializing in high-performance marketplace platforms and secure API integrations.",
     img: "/team/senior-dev.png"
   },
+  {
+    id: "business-analyst",
+    name: "Dilaksi Jeyakumar",
+    role: "Business Analyst",
+    bio: "Data-driven strategist with expertise in analyzing market trends and optimizing business processes.",
+    img: "/team/business-analyst.png"
+  },
 ];
 
 const REVENUE_TIERS = [
@@ -74,10 +86,10 @@ const REVENUE_TIERS = [
 ];
 
 const MILESTONES = [
-  { period: "Q3 2026", title: "Beta Launch", detail: "Initial directory launch for Colombo-based talent and production houses." },
-  { period: "Q4 2026", title: "Monetization", detail: "Rollout of Pro tiers and integrated payment gateway for local and USD payments." },
-  { period: "Q1 2027", title: "Expansion", detail: "Partnership with regional film corporations and regional talent hubs." },
-  { period: "Q2 2027", title: "Project Escrow", detail: "Implementation of secure project bidding and payment escrow systems." },
+  { period: " 2026", title: "Beta Launch", detail: "Initial directory launch for talent and production houses." },
+  { period: " 2026", title: "Monetization", detail: "Rollout of Pro tiers and integrated payment gateway for local and USD payments." },
+  { period: " 2026", title: "Expansion", detail: "Partnership with regional film corporations and regional talent hubs." },
+  { period: " 2026", title: "Project Escrow", detail: "Implementation of secure project bidding and payment escrow systems." },
 ];
 
 function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
@@ -116,6 +128,133 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
         </div>
       </div>
     </SpotlightCard>
+  );
+}
+
+function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Inquiry sent successfully. Our team will contact you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const error = await response.json();
+        toast.error(error.message || "Failed to send inquiry. Please try again.");
+      }
+    } catch (err) {
+      toast.error("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section className="py-40 bg-background relative overflow-hidden" id="contact">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Get In Touch</Badge>
+            <h2 className="text-display-section !text-6xl mb-6 leading-tight">Connect with the <span className="text-foreground/40 italic">ARCHITECTS</span></h2>
+            <p className="text-body-narrative text-muted-foreground max-w-2xl mx-auto">
+              Ready to advance your cinematic venture? Send us a strategic inquiry and let&apos;s build the future of film infrastructure together.
+            </p>
+          </div>
+
+          <SpotlightCard className="p-8 md:p-12 border-foreground/10 bg-background/50 backdrop-blur-sm">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <Label htmlFor="name" className="text-label-stats text-[10px] uppercase tracking-widest text-foreground/60">Full Name</Label>
+                  <Input
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-all h-12"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-label-stats text-[10px] uppercase tracking-widest text-foreground/60">Email Address</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="name@company.com"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-all h-12"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <Label htmlFor="subject" className="text-label-stats text-[10px] uppercase tracking-widest text-foreground/60">Subject</Label>
+                <Input
+                  id="subject"
+                  placeholder="What is this regarding?"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-all h-12"
+                />
+              </div>
+
+              <div className="space-y-3">
+                <Label htmlFor="message" className="text-label-stats text-[10px] uppercase tracking-widest text-foreground/60">Strategic Message</Label>
+                <Textarea
+                  id="message"
+                  placeholder="Describe your inquiry or proposal..."
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-all min-h-[150px] resize-none"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-16 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  <>
+                    Submit Strategic Inquiry
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
+              </Button>
+            </form>
+          </SpotlightCard>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -401,26 +540,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Strategic Call to Action */}
-        <section className="py-40 bg-background relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foreground/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-
-          <div className="container mx-auto px-6 relative z-10 text-center">
-            <h2 className="text-display-section !text-6xl mb-12 max-w-4xl mx-auto leading-tight">Empowering the Next <span className="text-foreground/40 italic">CINEMATIC WAVE</span></h2>
-            <p className="text-body-narrative text-muted-foreground max-w-3xl mx-auto mb-16">
-              Join us in building the digital backbone of the Sri Lankan film industry. Whether you are an investor, a producer, or a creator, ThiraiTerra is your gateway to the ecosystem.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button className="h-16 px-12 bg-foreground text-background font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/90 transition-all hover:scale-105">
-                Download Full Pitch Deck
-              </Button>
-              <Button className="h-16 px-12 bg-transparent border border-foreground/20 text-foreground font-bold uppercase tracking-widest text-xs rounded-full hover:bg-foreground/5 transition-all">
-                Request Early Access
-              </Button>
-            </div>
-          </div>
-        </section>
+        <ContactSection />
       </main>
 
       <footer className="bg-background py-24 border-t border-foreground/5">

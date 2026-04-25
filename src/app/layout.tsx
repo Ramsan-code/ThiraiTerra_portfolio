@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { FacebookPixel } from "@/components/facebook-pixel";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function RootLayout({
   children,
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           <FacebookPixel />
           {children}
+          <Toaster position="top-center" />
           <VisualEditsMessenger />
         </ThemeProvider>
       </body>
