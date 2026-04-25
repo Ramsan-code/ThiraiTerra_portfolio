@@ -157,8 +157,8 @@ function ContactSection() {
         toast.success("Inquiry sent successfully. Our team will contact you soon.");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        const error = await response.json();
-        toast.error(error.message || "Failed to send inquiry. Please try again.");
+        const data = await response.json();
+        toast.error(data.message || "Failed to send inquiry. Please try again.");
       }
     } catch (err) {
       toast.error("An unexpected error occurred. Please try again.");

@@ -4,7 +4,15 @@ import { ContactSchema } from '@/lib/schemas';
 
 export async function POST(req: Request) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY || 're_123');
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is missing from environment variables');
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Server configuration error: API key missing.' 
+      }, { status: 500 });
+    }
+    const resend = new Resend(apiKey);
     const body = await req.json();
 
     const validatedData = ContactSchema.parse(body);
@@ -31,11 +39,20 @@ export async function POST(req: Request) {
 
 
     if (error) {
-      return NextResponse.json({ error }, { status: 500 });
+      console.error('Resend API Error:', error);
+      return NextResponse.json({ 
+        success: false,
+        message: error.message || 'Resend API failed' 
+      }, { status: 500 });
     }
 
-    return NextResponse.json({ data });
-  } catch (error) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({ success: true, data });
+  } catch (error: any) {
+    console.error('Contact Form Error:', error);
+    return NextResponse.json({ 
+      success: false,
+      message: error.message || 'Internal Server Error',
+      details: error.errors || null 
+    }, { status: 500 });
   }
 }
