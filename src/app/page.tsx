@@ -176,9 +176,8 @@ function ContactSection() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Get In Touch</Badge>
-            <h2 className="text-display-section !text-6xl mb-6 leading-tight">Connect with the <span className="text-foreground/40 italic">ARCHITECTS</span></h2>
+            <h2 className="text-display-section !text-6xl mb-6 leading-tight">Connect  <span className="text-foreground/40 italic"></span></h2>
             <p className="text-body-narrative text-muted-foreground max-w-2xl mx-auto">
-              Ready to advance your cinematic venture? Send us a strategic inquiry and let&apos;s build the future of film infrastructure together.
             </p>
           </div>
 
@@ -201,7 +200,6 @@ function ContactSection() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="name@company.com"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -214,7 +212,7 @@ function ContactSection() {
                 <Label htmlFor="subject" className="text-label-stats text-[10px] uppercase tracking-widest text-foreground/60">Subject</Label>
                 <Input
                   id="subject"
-                  placeholder="What is this regarding?"
+                  placeholder="Subject"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   className="bg-foreground/5 border-foreground/10 focus:border-foreground/30 transition-all h-12"
@@ -225,7 +223,6 @@ function ContactSection() {
                 <Label htmlFor="message" className="text-label-stats text-[10px] uppercase tracking-widest text-foreground/60">Strategic Message</Label>
                 <Textarea
                   id="message"
-                  placeholder="Describe your inquiry or proposal..."
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -245,7 +242,7 @@ function ContactSection() {
                   </>
                 ) : (
                   <>
-                    Submit Strategic Inquiry
+                    Submit 
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}
