@@ -387,6 +387,16 @@ export default function Home() {
                     ))}
                   </ul>
 
+                  <Button
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    variant={tier.isPrimary ? "default" : "outline"}
+                    className={cn(
+                      "w-full rounded-full uppercase tracking-widest text-[10px] h-12 font-bold transition-all",
+                      tier.isPrimary ? "bg-foreground text-background hover:bg-foreground/90" : "border-foreground/20 hover:bg-foreground/5"
+                    )}
+                  >
+                    {tier.cta}
+                  </Button>
                 </SpotlightCard>
               ))}
             </div>
