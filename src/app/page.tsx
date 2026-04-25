@@ -501,7 +501,7 @@ export default function Home() {
               </div>
 
               <div className="bg-foreground/5 border border-foreground/10 p-12 rounded-3xl">
-                <h3 className="text-label-stats text-foreground/40 mb-10 uppercase tracking-[0.2em] text-[10px]">2026-2027 Roadmap</h3>
+                <h3 className="text-label-stats text-foreground/40 mb-10 uppercase tracking-[0.2em] text-[10px]">2026 Roadmap</h3>
                 <div className="space-y-10 relative">
                   <div className="absolute left-[7px] top-2 bottom-2 w-[1px] bg-foreground/10" />
                   {MILESTONES.map((m, i) => (
@@ -547,31 +547,9 @@ export default function Home() {
               <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
               <p className="text-label-stats text-[10px] text-foreground/40 max-w-xs">Building the professional infrastructure for the Sri Lankan film industry.</p>
             </div>
-            <div className="flex gap-16">
-              <div className="space-y-6">
-                <h5 className="text-label-stats text-[10px] text-foreground uppercase tracking-widest">Platform</h5>
-                <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Talent Directory</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Project Bidding</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Investor Portal</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h5 className="text-label-stats text-[10px] text-foreground uppercase tracking-widest">Company</h5>
-                <ul className="space-y-3 text-label-stats text-[10px] text-foreground/40">
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Our Vision</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Leadership</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Roadmap</li>
-                </ul>
-              </div>
-            </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
             <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA. ALL RIGHTS RESERVED.</p>
-            <div className="flex gap-8 text-label-stats text-[9px] text-foreground/40">
-              <span className="hover:text-foreground cursor-pointer transition-colors">PRIVACY POLICY</span>
-              <span className="hover:text-foreground cursor-pointer transition-colors">TERMS OF SERVICE</span>
-            </div>
           </div>
         </div>
       </footer>
