@@ -20,13 +20,17 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from: 'ThiraiTerra Verification <onboarding@resend.dev>',
       to: ['thiraiterra@gmail.com'],
+      replyTo: validatedData.email,
       reply_to: validatedData.email,
       subject: `[ThiraiTerra] New Inquiry: ${validatedData.subject || 'Profile Request'}`,
       html: `
         <div style="font-family: sans-serif; background: #081624; color: #F5F5F5; padding: 40px; border-radius: 12px;">
           <h1 style="color: #D88A4A; margin-bottom: 24px;">New Strategic Inquiry</h1>
           <p><strong>From:</strong> ${validatedData.name}</p>
-          <p><strong>Email:</strong> ${validatedData.email}</p>
+          <p><strong>Email:</strong> <a href="mailto:${validatedData.email}" style="color: #D88A4A; text-decoration: none;">${validatedData.email}</a></p>
+          <div style="margin: 24px 0;">
+            <a href="mailto:${validatedData.email}" style="background: #D88A4A; color: #081624; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block;">Reply Directly</a>
+          </div>
           <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; margin-top: 20px;">
             <p style="margin: 0;">${validatedData.message}</p>
           </div>
