@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'ThiraiTerra Verification <onboarding@resend.dev>',
-      to: [validatedData.email],
+      to: ['thiraiterra@gmail.com'],
       subject: `[ThiraiTerra] New Inquiry: ${validatedData.subject || 'Profile Request'}`,
       html: `
         <div style="font-family: sans-serif; background: #081624; color: #F5F5F5; padding: 40px; border-radius: 12px;">
