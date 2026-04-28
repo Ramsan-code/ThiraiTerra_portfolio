@@ -37,7 +37,7 @@ export default function ProjectShowcase() {
           <div className="lg:col-span-8 space-y-8">
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-foreground/5 group bg-secondary/20">
               <Image 
-                src="https://images.unsplash.com/photo-1590011502446-27663f7362a1?q=80&w=1200&h=675&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200&h=675&auto=format&fit=crop" 
                 alt="The Ancient Harbor Mood"
                 fill
                 className="object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-1000"
@@ -64,7 +64,7 @@ export default function ProjectShowcase() {
 
           <div className="lg:col-span-4 space-y-8">
             <div>
-              <h1 className="text-display-lg leading-tight mb-4 uppercase tracking-tighter">THE ANCIENT <span className="text-foreground/40 italic">HARBOR</span></h1>
+              <h1 className="text-display-lg leading-tight mb-4 uppercase tracking-tighter">THE ANCIENT <span className="text-foreground/60 italic">HARBOR</span></h1>
               <p className="text-title-md text-muted-foreground mb-6">In the 19th-century Galle Fort, a young mapmaker discovers a secret trade route that could change the fate of the island.</p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -141,7 +141,7 @@ export default function ProjectShowcase() {
                 ].map((member, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/30 border border-foreground/5">
                     <div className="w-12 h-12 rounded-full overflow-hidden border border-foreground/10 bg-black">
-                      <img src={member.avatar} className="w-full h-full object-cover grayscale" alt={member.name} />
+                      <Image src={member.avatar} width={100} height={100} className="w-full h-full object-cover grayscale" alt={member.name} />
                     </div>
                     <div>
                       <p className="text-sm font-bold flex items-center gap-1.5">

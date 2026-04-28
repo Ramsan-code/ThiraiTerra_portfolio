@@ -71,14 +71,14 @@ const REVENUE_TIERS = [
   },
   {
     title: "Pro Creator",
-    price: "Comming Soon",
+    price: "Coming Soon",
     features: ["Verified Badge", "Featured Placement", "Early Access to Jobs", "Analytics Dashboard"],
     cta: "Go Pro",
     isPrimary: true
   },
   {
     title: "Studio/Agency",
-    price: "Comming Soon",
+    price: "Coming Soon",
     features: ["Unlimited Job Postings", "Advanced Talent Filters", "Team Collaboration", "Priority Support"],
     cta: "Contact Sales",
     isPrimary: false
@@ -282,7 +282,7 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-foreground/10 bg-foreground/5 glimmer-badge mb-8">
-                  <span className="text-label-stats text-foreground/60 uppercase tracking-tighter">Investment Proposal 2026</span>
+                  <span className="text-xs text-foreground/80 uppercase tracking-tighter">Investment Proposal 2026</span>
                 </div>
                 <h1 className="text-display-hero max-w-5xl mx-auto mb-8 tracking-[-0.03em] break-words">
                   The Digital Infrastructure for the <span className="text-foreground underline decoration-foreground/20 underline-offset-[12px]">Future of Cinema</span>
@@ -331,7 +331,7 @@ export default function Home() {
                 <Badge className="bg-foreground/5 text-foreground/60 mb-6 border-foreground/10 px-4 py-1.5 uppercase tracking-[0.2em] text-[10px]">Strategic Analysis</Badge>
                 <h2 className="text-display-section !text-5xl text-foreground mb-8 leading-tight">Solving the Fragmentation of <span className="text-foreground/40 italic">FILM PRODUCTION</span></h2>
                 <p className="text-body-narrative text-muted-foreground mb-12">
-                  The  relies on fragmented word-of-mouth networks and offline directories. This inefficiency leads to delayed productions, talent invisibility, and high friction for international co-productions.
+                  The industry relies on fragmented word-of-mouth networks and offline directories. This inefficiency leads to delayed productions, talent invisibility, and high friction for international co-productions.
                 </p>
               </div>
             </div>

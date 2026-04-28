@@ -14,7 +14,7 @@ const geologica = Geologica({
 
 export const metadata: Metadata = {
   title: "ThiraiTerra",
-  description: "ThiraiTerra .",
+  description: "ThiraiTerra is a networking and hiring marketplace designed exclusively for the Sri Lankan film industry.",
 };
 
 
