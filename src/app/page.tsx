@@ -23,6 +23,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { Footer } from "@/components/footer";
 
 const QUICK_STATS = [
   { label: "Market Opportunity", value: "", detail: "Global Film & Media", icon: Globe },
@@ -550,19 +551,7 @@ export default function Home() {
         <ContactSection />
       </main>
 
-      <footer className="bg-background py-24 border-t border-foreground/5">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-            <div>
-              <span className="text-display-section !text-2xl text-foreground block mb-4 tracking-[-0.03em]">THIRAI<span className="text-foreground/40 italic">TERRA</span></span>
-              <p className="text-label-stats text-[10px] text-foreground/40 max-w-xs">Building the professional infrastructure for the Sri Lankan film industry.</p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-foreground/5 gap-4">
-            <p className="text-label-stats text-[9px] text-foreground/20 tracking-[0.3em]">© 2026 THIRAITERRA. ALL RIGHTS RESERVED.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

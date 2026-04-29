@@ -43,7 +43,7 @@
 }
 
 :root {
-  --background: #FFFFFF;
+  --background: #FAFAFA;
   --foreground: #0A0A0A;
   
   --card: #FFFFFF;
@@ -74,14 +74,14 @@
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #FFFFFF;
+  --background: #18181B;
+  --foreground: #FAFAFA;
   
-  --card: #0A0A0A;
-  --card-foreground: #FFFFFF;
+  --card: #27272A;
+  --card-foreground: #FAFAFA;
   
-  --popover: #0A0A0A;
-  --popover-foreground: #FFFFFF;
+  --popover: #27272A;
+  --popover-foreground: #FAFAFA;
   
   --primary: #FFFFFF;
   --primary-foreground: #000000;

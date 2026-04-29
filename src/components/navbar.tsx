@@ -12,6 +12,11 @@ export function Navbar() {
               THIRAI<span className="text-foreground/40 italic">TERRA</span>
             </span>
           </Link>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/blog" className="text-[11px] font-bold uppercase tracking-widest text-foreground/60 hover:text-foreground transition-colors">
+              Blog
+            </Link>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <ThemeToggle />
