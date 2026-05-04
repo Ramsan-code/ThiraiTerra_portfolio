@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -15,7 +14,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-9 w-16 rounded-full border border-foreground/10 bg-secondary/50 animate-pulse" />
+      <div className="h-10 w-10 rounded-full border border-border bg-secondary/50 animate-pulse" />
     );
   }
 
@@ -23,48 +22,47 @@ export function ThemeToggle() {
 
   return (
     <button
+      id="theme-toggle"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="group relative flex h-9 w-16 cursor-pointer items-center rounded-full border border-foreground/10 bg-secondary/50 p-1 transition-colors hover:border-foreground/20"
-      aria-label="Toggle Theme"
+      className="relative flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-border bg-secondary text-foreground transition-all duration-200 hover:bg-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      aria-label={isDark ? "Switch to white theme" : "Switch to gray theme"}
+      title="Toggle theme"
     >
-      <div className="absolute inset-0 flex items-center justify-between px-2 text-[8px] font-bold uppercase tracking-tighter text-foreground/30 opacity-0 transition-opacity group-hover:opacity-100">
-        <span>Light</span>
-        <span>Dark</span>
-      </div>
-      
-      <motion.div
-        className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full bg-background border border-foreground/10 shadow-sm"
-        initial={false}
-        animate={{
-          x: isDark ? 28 : 0,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 400,
-          damping: 30,
-        }}
+      <svg
+        className={`absolute h-5 w-5 transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isDark
+            ? "translate-y-0 rotate-0 opacity-100"
+            : "translate-y-[100%] rotate-45 opacity-0"
+        }`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {isDark ? (
-            <motion.div
-              key="dark"
-              initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              exit={{ opacity: 0, scale: 0.5, rotate: 45 }}
-              className="h-3 w-3 bg-foreground"
-              style={{ borderRadius: "2px" }} // Square for Dark
-            />
-          ) : (
-             <motion.div
-              key="light"
-              initial={{ opacity: 0, scale: 0.5, rotate: 45 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              exit={{ opacity: 0, scale: 0.5, rotate: -45 }}
-              className="h-3 w-3 rounded-full bg-foreground" // Circle for Light
-            />
-          )}
-        </AnimatePresence>
-      </motion.div>
+        <circle cx="12" cy="12" r="5"></circle>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+      </svg>
+      <svg
+        className={`absolute h-5 w-5 transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isDark
+            ? "-translate-y-[100%] -rotate-45 opacity-0"
+            : "translate-y-0 rotate-0 opacity-100"
+        }`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
     </button>
   );
 }

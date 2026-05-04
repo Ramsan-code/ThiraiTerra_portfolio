@@ -43,62 +43,62 @@
 }
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #0A0A0A;
+  --background: #ffffff;
+  --foreground: #1f2937;
   
-  --card: #FFFFFF;
-  --card-foreground: #0A0A0A;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
   
-  --popover: #FFFFFF;
-  --popover-foreground: #0A0A0A;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
   
-  --primary: #000000;
-  --primary-foreground: #FFFFFF;
+  --primary: #1f2937;
+  --primary-foreground: #f9fafb;
   
-  --secondary: #E5E5E5;
-  --secondary-foreground: #0A0A0A;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1f2937;
   
-  --muted: #E5E5E5;
-  --muted-foreground: #52525B;
+  --muted: #f3f4f6;
+  --muted-foreground: #4b5563;
   
-  --accent: #000000;
-  --accent-foreground: #FFFFFF;
+  --accent: #f3f4f6;
+  --accent-foreground: #1f2937;
   
-  --border: #D4D4D8;
+  --border: #e5e7eb;
   --border-subtle: rgba(0, 0, 0, 0.05);
-  --input: #D4D4D8;
-  --ring: #000000;
+  --input: #e5e7eb;
+  --ring: #2563eb;
   --bg-subtle: rgba(0, 0, 0, 0.03);
   
   --radius: 12px;
 }
 
 .dark {
-  --background: #18181B;
-  --foreground: #FAFAFA;
+  --background: #111827;
+  --foreground: #f9fafb;
   
-  --card: #27272A;
-  --card-foreground: #FAFAFA;
+  --card: #1f2937;
+  --card-foreground: #f9fafb;
   
-  --popover: #27272A;
-  --popover-foreground: #FAFAFA;
+  --popover: #1f2937;
+  --popover-foreground: #f9fafb;
   
-  --primary: #FFFFFF;
-  --primary-foreground: #000000;
+  --primary: #f9fafb;
+  --primary-foreground: #111827;
   
-  --secondary: #111111;
-  --secondary-foreground: #FFFFFF;
+  --secondary: #1f2937;
+  --secondary-foreground: #f9fafb;
   
-  --muted: #111111;
-  --muted-foreground: #A1A1AA;
+  --muted: #374151;
+  --muted-foreground: #d1d5db;
   
-  --accent: #FFFFFF;
-  --accent-foreground: #000000;
+  --accent: #374151;
+  --accent-foreground: #f9fafb;
   
-  --border: #1F1F1F;
+  --border: #374151;
   --border-subtle: rgba(255, 255, 255, 0.05);
-  --input: #1F1F1F;
-  --ring: #FFFFFF;
+  --input: #374151;
+  --ring: #60a5fa;
   --bg-subtle: rgba(255, 255, 255, 0.03);
 }
 
@@ -109,6 +109,10 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 0;
+    -webkit-font-smoothing: auto;
+  }
+  .dark body {
+    -webkit-font-smoothing: antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
