@@ -60,6 +60,13 @@ const TEAM_MEMBERS = [
     bio: "Data-driven strategist with expertise in analyzing market trends and optimizing business processes.",
     img: "/team/business-analyst.png"
   },
+    {
+    id: "",
+    name: "Kenath Jeyakenady",
+    role: "AI Developer",
+    bio: " build real-world solutions and sharpen my technical skills through hands-on experience.",
+    img: "/team/WhatsApp Image 2026-05-01 at 8.59.00 PM.jpeg"
+  },
 ];
 
 const REVENUE_TIERS = [
